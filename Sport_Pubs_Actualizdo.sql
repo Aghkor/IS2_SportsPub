@@ -17,10 +17,9 @@ create table Equipo(
 	IDE INTEGER primary key NOT NULL,
 	Nombre VARCHAR(100)  NOT NULL,
 	Escudo BLOB,
-	Cantidad_de_jugador INTEGER NOT NULL,
-	PartidoJugados INTEGER NOT NULL,
-	puntos INTEGER NOT NULL,
-	DG INTEGER NOT NULL
+	Fecha_Creacion INTEGER NOT NULL,
+	Lider_Equipo VARCHAR(69) NOT NULL,
+	Cantidad_de_jugador INTEGER NOT NULL
 );
 create table Usuario_Equipo(
 	IDU INTEGER FOREIGN KEY REFERENCES Usuario (IDU),
