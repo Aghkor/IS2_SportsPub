@@ -6,6 +6,7 @@ create table Usuario(
 	Apellido VARCHAR(30) NOT NULL,
 	Rol VARCHAR(30) NOT NULL,
 	Edad INTEGER NOT NULL,
+	genero VARCHAR(40) NOT NULL,
 	Foto BLOB NOT NULL,
 	Email VARCHAR(60) NOT NULL,
 	Celular INTEGER NOT NULL,
