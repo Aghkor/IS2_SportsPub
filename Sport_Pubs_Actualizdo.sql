@@ -25,10 +25,10 @@ create table Usuario_Equipo(
 	IDU INTEGER FOREIGN KEY REFERENCES Usuario (IDU),
 	IDE INTEGER FOREIGN KEY REFERENCES Equipo(IDE)
 );
-create table Partido(
+create table Encuentro(
 	IDP int primary key ,
-	Goles1 INTEGER NOT NULL,
-	Goles2 INTEGER NOT NULL,
+	Equipo1 VARCHAR(80) NOT NULL,
+	Equipo2 VARCHAR(80) NOT NULL,
 	Fecha DATETIME NOT NULL,
 	IDE1 INTEGER FOREING KEY refereces Equipos( IDE) NOT NULL ,
 	IDE2 INTERGER FOREING KEY refereces Equipos(IDE) NOT NULL	
@@ -49,7 +49,7 @@ create table Comentario_equipo(
 
 
 );
-create table Comentario_partido(
+create table Comentario_Encuentro(
       IDP INTEGER FOREIGN KEY REFERENCES Partidos (IDP),
       IDC INTEGER FOREIGN KEY REFERENCES Comentario(IDC)
 );
