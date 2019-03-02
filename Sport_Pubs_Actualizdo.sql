@@ -4,7 +4,6 @@ create table Usuario(
 	IDU INTEGER primary key,
 	Nombre VARCHAR(30) NOT NULL,
 	Apellido VARCHAR(30) NOT NULL,
-	Rol VARCHAR(30) NOT NULL,
 	Edad INTEGER NOT NULL,
 	genero VARCHAR(40) NOT NULL,
 	Foto BLOB NOT NULL,
