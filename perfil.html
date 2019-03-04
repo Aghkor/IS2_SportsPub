@@ -7,18 +7,18 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>CONFIG PERFIL EQUIPO 5 - SportsPub</title>
+    <title>Perfil - SportsPub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" />
         
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-
-    <link href="assets/css/table-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -39,7 +39,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>SportsPub</b></a>
+            <a href="index.html" class="logo"><b>Sports Pub </b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -193,7 +193,7 @@
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
-     <aside>
+      <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
@@ -208,6 +208,7 @@
                       </a>
 					  <ul class="sub">
 					      <li><a  href="index.html">Inicio</a></li>  
+						       
                           <li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
                       </ul>
                   </li>
@@ -241,7 +242,7 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.html">Perfil Usuario</a></li>
+                          <li class="active"><a  href="perfil.html">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
 						  <li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
                       </ul>
@@ -253,7 +254,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="config_perfilusuario.html">Configurar perfil </a></li>
-						  <li class="active"><a  href="config_eq5.html">configurar equipo futbol 5 </a></li>
+						  <li><a  href="config_eq5.html">configurar equipo futbol 5 </a></li>
 						  <li><a  href="config_eq8.html">configurar equipo futbol 8 </a></li>
                       </ul>
                   </li>
@@ -267,113 +268,128 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-    
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Configuracion del equipo Futbol 5</h3>
+          	<h3><i class="fa fa-angle-right"></i> Perfil Usuario</h3>
           	
-          	<!-- DATOS GENERALES DEL EQUIPO 1 -->
+          	<!-- DATOS GENERALES -->
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales Equipo 1 </h4>
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
                       <form class="form-horizontal style-form" method="get">
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo</label>
+                              <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="nombreequipo_1" type="text" >
+                                  <input type="text" class="form-control" id="nombre" type="text" disabled>
                               </div>
                           </div>
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Fecha de creacion  </label>
+                              <label class="col-sm-2 col-sm-2 control-label">Apellido </label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="fecha_creacion" type="text" >
+                                  <input type="text" class="form-control" id="Apellido" type="text" disabled>
                                </div>
                           </div>
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Lider del equipo </label>
+                              <label class="col-sm-2 col-sm-2 control-label">Correo Electronico </label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="lider_equipo" type="text" >
+                                  <input type="text" class="form-control" id="email" type="text" disabled>
                               </div>
                           </div>
 
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Numero de integrantes</label>
+                              <label class="col-sm-2 col-sm-2 control-label">Edad</label>
                               <div class="col-sm-10">
-                                  <input class="form-control" id="numero_integrantes" type="text" >
+                                  <input class="form-control" id="edad" type="text" disabled>
                               </div>
                           </div>
-                        <a class="btn btn-theme  " href="config_perfilusuario.html" type="s">Guardar cambios</a>
-		            <hr>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Genero</label>
+                              <div class="col-sm-10">
+                                  <input type="text"  class="form-control" id ="Genero"  disabled>
+                              </div>
+                          </div>                         
+						 <a class="btn btn-theme  " href="config_perfilusuario.html">Configuracion del perfil</a>
+		          
+				  <hr>
                           </div>
                       </form>
                   </div>
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
-				<!-- INTEGRANTES -->
+          	
+          	          	
+          	<!-- DATOS DE SUS EQUIPOS -->
           	<div class="row mt">
           		<div class="col-lg-12">
           			<div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> INTEGRANTES  FUTBOL 5 </h4>
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> EQUIPOS FUTBOL 5 </h4>
                           <form class="form-horizontal tasi-form" method="get">
                               <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 1 </label>
+                                  <label class="col-sm-2 control-label col-lg-2" >FUTBOL 5 </label>
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
-									  </br>
-									   <a class="btn btn-theme  " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>  
                                   </div>
                               </div>
                               <div class="form-group">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 2</label>
+                                  <label class="col-sm-2 control-label col-lg-2" >FUTBOL 5</label>
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_2" disabled>
-									  </br>
-									   <a class="btn btn-theme  " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
                                   </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 3 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5_1" disabled>
-									  </br>
-									   <a class="btn btn-theme  " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
-                                  </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 4 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5_1" disabled>
-									  </br>
-									   <a class="btn btn-theme  " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
-                                  </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 5 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5_1" disabled>
-									  </br>
-									   <a class="btn btn-theme  " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
-                                  </div>
-                              </div>
-							  
-                              
+                              </div>        
 
-							
+							  <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> VER PERFIL DE LOS EQUIPOS </button>
 		            <hr>
                           </form>
           			</div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
           	</div><!-- /row -->
 			
-
-			
-			
-			<!-- /MAIN CONTENT -->
+			         	<!-- DATOS DE SUS EQUIPOS -->
+          	<div class="row mt">
+          		<div class="col-lg-12">
+          			<div class="form-panel">
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> EQUIPOS FUTBOL 8</h4>
+                          <form class="form-horizontal tasi-form" method="get">
+                            
+                              <div class="form-group ">
+                                  <label class="col-sm-2 control-label col-lg-2">FUTBOL 8</label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol8_1" disabled>
+                                  </div>
+                              </div>
+							  <div class="form-group">
+                                  <label class="col-sm-2 control-label col-lg-2" >FUTBOL 8
+								  </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol8_2" disabled>
+                                  </div>
+                              </div>
+							  <button class="btn btn-theme btn-block" href="perfilequipo8.html" type="submit"><i class="fa fa-lock"></i> VER PERFIL DE LOS EQUIPOS</button>
+		            <hr>
+                          </form>
+          			</div><!-- /form-panel -->
+          		</div><!-- /col-lg-12 -->
+          	</div><!-- /row -->
+          	
+          	<!-- INPUT MESSAGES -->
+          
+          		
+          	<!-- CUSTOM TOGGLES -->
+          		<div class="col-lg-6">
+          			<div class="form-panel">
+                  	  
+          			</div>
+          		</div>
+          	</div><!-- /row -->
+          	
+          	
+		</section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
-     
+      
       <!--footer end-->
   </section>
 
@@ -389,7 +405,34 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
+    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+
+	<!--custom switch-->
+	<script src="assets/js/bootstrap-switch.js"></script>
+	
+	<!--custom tagsinput-->
+	<script src="assets/js/jquery.tagsinput.js"></script>
+	
+	<!--custom checkbox & radio-->
+	
+	<script type="text/javascript" src="assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/date.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+	
+	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+	
+	
+	<script src="assets/js/form-component.js"></script>    
     
+    
+  <script>
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
 
   </body>
 </html>
