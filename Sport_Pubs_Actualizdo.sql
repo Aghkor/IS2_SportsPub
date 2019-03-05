@@ -28,6 +28,7 @@ create table Equipo(
 	Nombre VARCHAR(100)  NOT NULL,
 	Fecha_Creacion INTEGER NOT NULL,
 	Lider_Equipo VARCHAR(69) NOT NULL,
+	tipo_futbol VARCHAR() NOT NULL,
 	Cantidad_de_jugador INTEGER NOT NULL
 );
 create table Usuario_Equipo(
@@ -41,7 +42,20 @@ create table Encuentro(
 	Equipo1 VARCHAR(80) NOT NULL,
 	Equipo2 VARCHAR(80) NOT NULL,
 	IDE1 INTEGER refereNces Equipo(IDE) NOT NULL ,
-	IDE2 INTEGER refereNces Equipo(IDE) NOT NULL	
+	IDE2 INTEGER refereNces Equipo(IDE) NOT NULL,
+	Ubicacion VARCHAR(100) NOT NULL,
+	TIPO_DE_FUTBOL VARCHAR(69) NOT NULL,
+	TIEMPO_ESPERA NOT NULL	
+);
+create table Encuentro_Usuario(
+	 IDEU INTEGER NOT NULL,
+	 IDU INTEGER  REFERENCES Usuario(IDU),
+         IDP INTEGER REFERENCES Comentario(IDP)
+);
+create table Encuentro_Equipo(
+	 IDEU INTEGER NOT NULL,
+	 IDE INTEGER  REFERENCES Usuario(IDE),
+         IDP INTEGER REFERENCES Comentario(IDP)
 );
 create table Comentario(
 	IDC INTEGER primary key NOT NULL,
