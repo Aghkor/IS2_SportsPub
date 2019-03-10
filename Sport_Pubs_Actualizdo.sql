@@ -7,7 +7,7 @@ create table Usuario(
 	Edad INTEGER NOT NULL,
 	genero VARCHAR(40) NOT NULL,
 	Email VARCHAR(60) NOT NULL,
-	Celular INTEGER NOT NULL,
+	Celular VARCHAR(10) NOT NULL,
 	Usuario VARCHAR(60) NOT NULL,
 	Contrasena VARBINARY(60) NOT NULL
 );
