@@ -34,32 +34,23 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="index.html">
+			<form class="form-login" action="Servletlogin" method="post">
 		        <h2 class="form-login-heading">Ingresa Ahora</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" id="email" placeholder="Email" autofocus>
+					<input type="text" class="form-control" id="email" placeholder="Email o usuario" name="user" autofocus>
 		            <br>
-		            <input type="password" class="form-control" id="contrasena" placeholder="Contraseña">
+					<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Olvidaste tu contraseña?</a>
 		
 		                </span>
 		            </label>
-		            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> INGRESO </button>
+		            <button class="btn btn-theme btn-block"  type="submit"><i class="fa fa-lock"></i> INGRESO </button>
 		            <hr>
 		            
-		            
-		            <div class="registration">
-		                No tienes una cuenta<br/>
-		                <a class="form-login-heading" href="login.html#myModal">
-						<button class="btn btn-theme btn-block" href="registro.html#myModal" type="submit"><i class="fa fa-lock"></i> Crear tu cuenta en SportsPub </button>
-		                     </a>
-		            </div>
-		
 		        </div>
-		
-		          <!-- Modal -->
+					<!-- Modal -->
 		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
 		              <div class="modal-dialog">
 		                  <div class="modal-content">
@@ -80,13 +71,21 @@
 		              </div>
 		          </div>
 		          <!-- modal -->
-				  
-				  
-				  
-				  
-				  
-		
-		      </form>	  	
+		      </form>
+				<form class="form-login" action="registro_1.html">
+				 <div class="login-wrap">
+				 <div class="registration">
+		                No tienes una cuenta<br/>
+		                <a class="form-login-heading" href="login.html#myModal">
+							<button class="btn btn-theme btn-block"  type="submit"><i class="fa fa-lock"></i> Crear tu cuenta en SportsPub </button>
+		                    
+						 </a>
+		            </div>
+				 </div>
+				
+				
+			</form>
+			
 	  	
 	  	</div>
 	  </div>

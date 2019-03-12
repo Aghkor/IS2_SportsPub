@@ -8,6 +8,7 @@ package co.usa.sports_pub.modelos.Usuriomanager;
 import co.usa.sports_pub.utils.Utils;
 import co.usa.sports_pub.modelos.vo.Usuario;
 import co.usa.sports_pub.modelos.persistence.userDAO;
+import java.util.List;
 
 
 /**
@@ -21,7 +22,6 @@ public class Usermanager {
 	
 	int edada=Integer.parseInt(edad);
 	
-		
 	userDAO ud=new userDAO();
 	Usuario u=new Usuario();
 	u.setNombre(nombre);
@@ -37,5 +37,21 @@ public class Usermanager {
 	return Utils.toJson(u);
 	
 	}
+	
+	
+	public Usuario getUser(String user){
+	
+	
+		userDAO ud=new userDAO();
+		Usuario u=new Usuario();
+		List<Usuario> us=ud.getObject(user);
+		int in=us.size();
+		u=us.get(in);
+		
+		
+		
+	return u;
+	}
+	
 	
 }

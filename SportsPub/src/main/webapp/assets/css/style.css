@@ -1946,7 +1946,9 @@ label {
 }
 .login-wrap {
 	padding: 20px;
+	bottom: 50%;
 }
+
 .login-wrap .registration {
 	text-align: center;
 }
