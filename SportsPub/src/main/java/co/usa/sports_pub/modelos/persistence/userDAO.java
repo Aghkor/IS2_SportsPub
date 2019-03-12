@@ -38,14 +38,16 @@ public class userDAO {
 		}
 	}
 
-	public List<Usuario> getObject(String User) {
+	public List<Usuario> getObject(Usuario User) {
 		try {
 
 			en = EMF.get().createEntityManager();
 			en.getTransaction().begin();
 			TypedQuery<Usuario> query = (TypedQuery<Usuario>) en.createQuery(
-					"SELECT u FROM UsuarioAC u WHERE u.usuario = " + User, Usuario.class);
-
+					"SELECT u FROM Usuario u WHERE u.usuario =:usuario", Usuario.class);
+  
+			query.setParameter("usuario",User.getUsuario());
+			
 			en.getTransaction().commit();
 			return query.getResultList();
 
