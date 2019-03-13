@@ -46,13 +46,14 @@ public class Usermanager {
 		Usuario u=new Usuario();
 		u.setUsuario(user);
 		List<Usuario> us=ud.getObject(u);
-		int in=us.size();
-		
-		
-		
-		
-	return us.get(in-1);
-	}
 	
+	return us.get(0);
+	}
+    public List<Usuario> disponibles(){
+        userDAO ud=new userDAO();
+	Usuario u=new Usuario();
+        List<Usuario> listus=ud.disponibles();
+        return listus;
+    }
 	
 }

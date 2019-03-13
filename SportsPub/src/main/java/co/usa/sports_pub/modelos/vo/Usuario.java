@@ -39,6 +39,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 	, @NamedQuery(name = "Usuario.findByContrasena", query = "SELECT u FROM Usuario u WHERE u.contrasena = :contrasena")})
 public class Usuario implements Serializable {
 
+    @Size(max = 2)
+    @Column(name = "disponibilidad")
+    private String disponibilidad;
+
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -201,5 +205,13 @@ public class Usuario implements Serializable {
 	public String toString() {
 		return "co.usa.sports_pub.modelos.vo.Usuario[ idu=" + idu + " ]";
 	}
+
+    public String getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(String disponibilidad) {
+        this.disponibilidad = disponibilidad;
+    }
 	
 }
