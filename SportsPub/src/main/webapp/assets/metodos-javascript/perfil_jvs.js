@@ -11,7 +11,7 @@ const xhttp = new XMLHttpRequest();
  
  xhttp.onreadystatechange = function(){    
      
-    if(xhttp.status===200 && xhttp.readyState=== 4){
+    if(this.status===200 && this.readyState=== 4){
       
         
         var jsonResponse = xhttp.responseText;
