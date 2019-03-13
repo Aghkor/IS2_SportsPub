@@ -1,0 +1,22 @@
+{"persona":[{
+        "usuario": "cehd1317",
+        "nombre": "camilo",
+        "apellido": "hernandez",
+        "email": "camilohd12@gmail.com",
+        "celular": 313141858,
+        "edad": 21,
+        "genero": "masculino",
+        "valorizacion":1
+}, {
+  "name": "Cerveja",
+  "price": "12",
+  "quantity": "5"
+}, {
+  "name": "Hamburguer",
+  "price": "10",
+  "quantity": "2"
+}, {
+  "name": "Fraldas",
+  "price": "6",
+  "quantity": "2"
+}]}
