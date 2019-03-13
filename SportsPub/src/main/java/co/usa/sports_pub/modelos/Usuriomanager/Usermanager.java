@@ -40,17 +40,11 @@ public class Usermanager {
 	
 	
 	public Usuario getUser(String user){
-	
-	
 		userDAO ud=new userDAO();
 		Usuario u=new Usuario();
 		u.setUsuario(user);
 		List<Usuario> us=ud.getObject(u);
 		int in=us.size();
-		
-		
-		
-		
 	return us.get(in-1);
 	}
 	
