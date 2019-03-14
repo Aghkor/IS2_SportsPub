@@ -49,6 +49,7 @@ public class Usermanager {
 	
 	return us.get(0);
 	}
+        
     public List<Usuario> disponibles(){
         userDAO ud=new userDAO();
 	Usuario u=new Usuario();

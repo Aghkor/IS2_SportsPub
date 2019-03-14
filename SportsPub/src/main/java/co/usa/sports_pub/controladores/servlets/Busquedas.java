@@ -8,8 +8,13 @@ package co.usa.sports_pub.controladores.servlets;
 import co.usa.sports_pub.modelos.Usuriomanager.Usermanager;
 import co.usa.sports_pub.modelos.vo.Usuario;
 import co.usa.sports_pub.utils.Utils;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -47,8 +52,30 @@ public class Busquedas extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+                try {
+
+            Usuario u=new Usuario();
+           Usermanager lista=new Usermanager();
+            // Si no hay nada en sesion
+            
+
+                List<Usuario> usuarios = lista.disponibles();
+                
+          try (PrintWriter out = response.getWriter()) {
+              
+                    Gson gson = new Gson();
+                    out.println(gson.toJson(usuarios));
+                    return;
+                }
+
+            
+            
+
+        } catch (IOException ex) {
+            Logger.getLogger(Busquedas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
 
     /**
      * Handles the HTTP <code>POST</code> method.
