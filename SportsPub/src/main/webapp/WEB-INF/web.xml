@@ -8,6 +8,10 @@
         <servlet-name>Servletlogin</servlet-name>
         <servlet-class>co.usa.sports_pub.controladores.servlets.Servletlogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Busquedas</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.Busquedas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servletuser</servlet-name>
         <url-pattern>/Servletuser</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Servletlogin</servlet-name>
         <url-pattern>/Servletlogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Busquedas</servlet-name>
+        <url-pattern>/Busquedas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

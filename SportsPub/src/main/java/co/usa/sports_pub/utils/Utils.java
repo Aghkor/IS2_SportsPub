@@ -1,5 +1,6 @@
 package co.usa.sports_pub.utils;
 
+import co.usa.sports_pub.modelos.vo.Usuario;
 import java.io.BufferedReader;
 import java.util.Random;
 
