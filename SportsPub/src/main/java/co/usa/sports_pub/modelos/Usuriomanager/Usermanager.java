@@ -5,9 +5,11 @@
  */
 package co.usa.sports_pub.modelos.Usuriomanager;
 
+import co.usa.sports_pub.modelos.persistence.equipoDAO;
 import co.usa.sports_pub.utils.Utils;
 import co.usa.sports_pub.modelos.vo.Usuario;
 import co.usa.sports_pub.modelos.persistence.userDAO;
+import co.usa.sports_pub.modelos.vo.Equipo;
 import java.util.List;
 import javax.json.Json;
 
@@ -45,12 +47,18 @@ public class Usermanager {
 	}
 
         
-    public List<Usuario> disponibles(){
+    public List<Usuario> usuariosDisponibles(){
         userDAO ud=new userDAO();
 	Usuario u=new Usuario();
         List<Usuario> listus=ud.disponibles();
         return listus;
     }
-	
+    
+	public List<Equipo> equiposDisponibles(){
+        equipoDAO equi=new equipoDAO();
+	Equipo u=new Equipo();
+        List<Equipo> listaquipos=equi.equiposdisponibles();
+        return listaquipos;
+    }
 
 }

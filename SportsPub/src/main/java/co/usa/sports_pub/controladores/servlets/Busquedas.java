@@ -65,7 +65,7 @@ public class Busquedas extends HttpServlet {
 
             
            Usermanager lista=new Usermanager();
-                List<Usuario> usuarios = lista.disponibles();
+                List<Usuario> usuarios = lista.usuariosDisponibles();
                 
           try (PrintWriter out = response.getWriter()) {
               
