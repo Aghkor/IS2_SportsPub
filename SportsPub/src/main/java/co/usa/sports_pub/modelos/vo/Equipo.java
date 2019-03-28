@@ -37,12 +37,14 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Equipo.findByFechaCreacion", query = "SELECT e FROM Equipo e WHERE e.fechaCreacion = :fechaCreacion")
     , @NamedQuery(name = "Equipo.findByLiderEquipo", query = "SELECT e FROM Equipo e WHERE e.liderEquipo = :liderEquipo")
     , @NamedQuery(name = "Equipo.findByTipoFutbol", query = "SELECT e FROM Equipo e WHERE e.tipoFutbol = :tipoFutbol")
-    , @NamedQuery(name = "Equipo.findByCantidadDeJugador", query = "SELECT e FROM Equipo e WHERE e.cantidadDeJugador = :cantidadDeJugador")})
+    , @NamedQuery(name = "Equipo.findByCantidadDeJugador", query = "SELECT e FROM Equipo e WHERE e.cantidadDeJugador = :cantidadDeJugador")
+    , @NamedQuery(name = "Equipo.findBydisponibilidad", query = "SELECT e FROM Equipo e WHERE e.disponibilidad = :disponibilidad")})
 public class Equipo implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     @Basic(optional = false)
     @Column(name = "ide")
     private Integer ide;
@@ -53,7 +55,7 @@ public class Equipo implements Serializable {
     private String nombre;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "fecha_creacion")
+    @Column(name = "fecha_creacion")   
     private int fechaCreacion;
     @Basic(optional = false)
     @NotNull
@@ -65,10 +67,17 @@ public class Equipo implements Serializable {
     @Size(min = 1, max = 2)
     @Column(name = "tipo_futbol")
     private String tipoFutbol;
+    
     @Basic(optional = false)
     @NotNull
     @Column(name = "cantidad_de_jugador")
     private int cantidadDeJugador;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "disponibilidad")
+    private String disponibilidad;
+    
     @OneToMany(mappedBy = "ide")
     private Collection<UsuarioEquipo> usuarioEquipoCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "ide1")
@@ -87,13 +96,14 @@ public class Equipo implements Serializable {
         this.ide = ide;
     }
 
-    public Equipo(Integer ide, String nombre, int fechaCreacion, String liderEquipo, String tipoFutbol, int cantidadDeJugador) {
+    public Equipo(Integer ide, String nombre, int fechaCreacion, String liderEquipo, String tipoFutbol, int cantidadDeJugador, String disponibilidad) {
         this.ide = ide;
         this.nombre = nombre;
         this.fechaCreacion = fechaCreacion;
         this.liderEquipo = liderEquipo;
         this.tipoFutbol = tipoFutbol;
         this.cantidadDeJugador = cantidadDeJugador;
+        this.disponibilidad = disponibilidad;
     }
 
     public Integer getIde() {
@@ -142,6 +152,14 @@ public class Equipo implements Serializable {
 
     public void setCantidadDeJugador(int cantidadDeJugador) {
         this.cantidadDeJugador = cantidadDeJugador;
+    }
+    
+    public String getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(String disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
 
     @XmlTransient

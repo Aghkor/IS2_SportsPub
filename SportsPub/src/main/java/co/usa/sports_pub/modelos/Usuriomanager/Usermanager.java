@@ -60,5 +60,10 @@ public class Usermanager {
         List<Equipo> listaquipos=equi.equiposdisponibles();
         return listaquipos;
     }
+        
+        
+        public List<Usuario> usuariosDeEquipo(){
+           userDAO ud=new userDAO();
+        }
 
 }

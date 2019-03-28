@@ -63,9 +63,16 @@ public class Busquedas extends HttpServlet {
         }
                 try {
 
-            
+            //usuarios q estan disponibles para jugar y buscar equipos
            Usermanager lista=new Usermanager();
                 List<Usuario> usuarios = lista.usuariosDisponibles();
+                
+                //usuarios que pertenecen a un equipo.
+                //
+                //
+                //
+                //
+                //
                 
           try (PrintWriter out = response.getWriter()) {
               

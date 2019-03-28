@@ -5,6 +5,7 @@
  */
 package co.usa.sports_pub.modelos.persistence;
 
+import co.usa.sports_pub.modelos.vo.Equipo;
 import co.usa.sports_pub.modelos.vo.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -115,6 +116,30 @@ public class userDAO {
 		}
 
 	}
+        
+        //el usuario debe tener un ide del equipo, para buscar todos los usuarios que pertenecen a ese equipo.
+        public List<Usuario> usuariosEquipo(Equipo equipo){
+            try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Usuario> query = (TypedQuery<Usuario>) en.createQuery(
+					"SELECT u FROM Equipo u WHERE u.disponibilidad =:si", Usuario.class);
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+        }
         
        
 
