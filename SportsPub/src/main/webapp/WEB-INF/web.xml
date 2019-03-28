@@ -12,6 +12,10 @@
         <servlet-name>Busquedas</servlet-name>
         <servlet-class>co.usa.sports_pub.controladores.servlets.Busquedas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>pagina_inicio</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.pagina_inicio</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servletuser</servlet-name>
         <url-pattern>/Servletuser</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Busquedas</servlet-name>
         <url-pattern>/Busquedas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>pagina_inicio</servlet-name>
+        <url-pattern>/pagina_inicio</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

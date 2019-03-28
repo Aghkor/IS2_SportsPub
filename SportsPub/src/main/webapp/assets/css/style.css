@@ -602,8 +602,8 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     font-size: 11px;
 }
 
-.top-nav  {
-    margin-top: 7px;
+.top-nav {
+    margin-top: 10px;
 }
 
 .top-nav ul.top-menu > li .dropdown-menu.logout {
