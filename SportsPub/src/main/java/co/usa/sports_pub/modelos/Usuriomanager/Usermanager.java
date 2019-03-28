@@ -9,46 +9,41 @@ import co.usa.sports_pub.utils.Utils;
 import co.usa.sports_pub.modelos.vo.Usuario;
 import co.usa.sports_pub.modelos.persistence.userDAO;
 import java.util.List;
-
+import javax.json.Json;
 
 /**
  *
  * @author sgome
  */
 public class Usermanager {
+
+	public String insertUser(String json) throws ClassNotFoundException {
+
+		userDAO ud = new userDAO();
+		
+		Usuario u = (Usuario) Utils.fromJson(json, Usuario.class);
+		
+		List<Usuario> us = ud.getObject(u);
 	
-	
-	public String insertUser(String nombre,String apellido,String email,String contrasena,String edad,String usuario,String genero,String celular){
-	
-	int edada=Integer.parseInt(edad);
-	
-	userDAO ud=new userDAO();
-	Usuario u=new Usuario();
-	u.setNombre(nombre);
-	u.setApellido(apellido);
-	u.setEmail(email);
-	u.setContrasena(contrasena);
-	u.setEdad(edada);
-	u.setGenero(genero);
-	u.setUsuario(usuario);
-	u.setCelular(celular);
-	
-		ud.insertObject(u);
-	return Utils.toJson(u);
-	
+        if (us.isEmpty() ) {
+			ud.insertObject(u);
+			return "Usaurio registrado correctamente";
+		}else if (us.isEmpty()== false) {
+			return "Usuario o email ya existente";
+		} else{
+		     return "error en el registro de usuario intente nuevamente";
+		}
 	}
-	
-	
-	public Usuario getUser(String user){
-	
-	
-		userDAO ud=new userDAO();
-		Usuario u=new Usuario();
+
+	public Usuario getUser(String user) {
+		userDAO ud = new userDAO();
+		Usuario u = new Usuario();
 		u.setUsuario(user);
-		List<Usuario> us=ud.getObject(u);
-	
-	return us.get(0);
+		List<Usuario> us = ud.getObject(u);
+
+		return us.get(0);
 	}
+
         
     public List<Usuario> disponibles(){
         userDAO ud=new userDAO();
@@ -57,4 +52,5 @@ public class Usermanager {
         return listus;
     }
 	
+
 }

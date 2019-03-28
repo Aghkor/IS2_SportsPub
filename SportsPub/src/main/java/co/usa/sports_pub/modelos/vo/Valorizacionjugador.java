@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -31,6 +33,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Valorizacionjugador.findByIdvj", query = "SELECT v FROM Valorizacionjugador v WHERE v.idvj = :idvj")
     , @NamedQuery(name = "Valorizacionjugador.findByValorizacion", query = "SELECT v FROM Valorizacionjugador v WHERE v.valorizacion = :valorizacion")})
 public class Valorizacionjugador implements Serializable {
+
+	@JoinColumn(name = "idu", referencedColumnName = "idu")
+    @ManyToOne(optional = false)
+	private Usuario idu;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -96,5 +102,13 @@ public class Valorizacionjugador implements Serializable {
     public String toString() {
         return "co.usa.sports_pub.modelos.vo.Valorizacionjugador[ idvj=" + idvj + " ]";
     }
+
+	public Usuario getIdu() {
+		return idu;
+	}
+
+	public void setIdu(Usuario idu) {
+		this.idu = idu;
+	}
     
 }

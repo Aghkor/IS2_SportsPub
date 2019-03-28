@@ -5,16 +5,8 @@
  */
 package co.usa.sports_pub.controladores.servlets;
 
-import co.usa.sports_pub.modelos.Usuriomanager.Usermanager;
-import co.usa.sports_pub.modelos.vo.Usuario;
-import co.usa.sports_pub.utils.Utils;
-import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Fabio
+ * @author USER
  */
-public class Busquedas extends HttpServlet {
+public class Equipos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,8 +28,20 @@ public class Busquedas extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-                                       throws ServletException, IOException{
-            
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Equipos</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet Equipos at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -52,36 +56,8 @@ public class Busquedas extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        String username = null;
-        if (request.getSession().getAttribute("usuario") != null) {
-            Usuario u = (Usuario) request.getSession().getAttribute("usuario");
-            username = u.getUsuario();
-        } else {
-            username = null;
-        }
-                try {
-
-            
-           Usermanager lista=new Usermanager();
-                List<Usuario> usuarios = lista.disponibles();
-                
-          try (PrintWriter out = response.getWriter()) {
-              
-                    Gson gson = new Gson();
-                    out.println(gson.toJson(usuarios));
-                    return;
-                }
-
-            
-            
-
-        } catch (IOException ex) {
-            Logger.getLogger(Busquedas.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
-    
 
     /**
      * Handles the HTTP <code>POST</code> method.

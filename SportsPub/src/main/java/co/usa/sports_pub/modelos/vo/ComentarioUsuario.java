@@ -31,6 +31,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "ComentarioUsuario.findByIdcu", query = "SELECT c FROM ComentarioUsuario c WHERE c.idcu = :idcu")})
 public class ComentarioUsuario implements Serializable {
 
+	@JoinColumn(name = "idu", referencedColumnName = "idu")
+    @ManyToOne(optional = false)
+	private Usuario idu;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -88,5 +92,13 @@ public class ComentarioUsuario implements Serializable {
     public String toString() {
         return "co.usa.sports_pub.modelos.vo.ComentarioUsuario[ idcu=" + idcu + " ]";
     }
+
+	public Usuario getIdu() {
+		return idu;
+	}
+
+	public void setIdu(Usuario idu) {
+		this.idu = idu;
+	}
     
 }

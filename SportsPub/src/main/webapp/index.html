@@ -18,6 +18,11 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
   </head>
 
@@ -27,13 +32,13 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
 
-	  <div id="login-page">
-	  	<div class="container">
+	  <section id="login-page">
+	  	<section class="container">
 	  	
-			<form class="form-login" action="Servletlogin" method="post">
+			<section class="form-login">
 		        <h2 class="form-login-heading">Ingresa Ahora</h2>
-		        <div class="login-wrap">
-					<input type="text" class="form-control" id="email" placeholder="Email o usuario" name="user" autofocus>
+		        <section class="login-wrap">
+					<input type="text" class="form-control" id="user" placeholder="Email o usuario" name="user" autofocus>
 		            <br>
 					<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
 		            <label class="checkbox">
@@ -42,58 +47,59 @@
 		
 		                </span>
 		            </label>
-		            <button class="btn btn-theme btn-block"  type="submit"><i class="fa fa-lock"></i> INGRESO </button>
+		            <button class="btn btn-theme btn-block"  id="btn-login" type="submit"><i class="fa fa-lock"></i> INGRESO </button>
 		            <hr>
 		            
-		        </div>
+		        </section>
 					<!-- Modal -->
-		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-		              <div class="modal-dialog">
-		                  <div class="modal-content">
-		                      <div class="modal-header">
+		          <section aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+		              <section class="modal-dialog">
+		                  <section class="modal-content">
+		                      <section class="modal-header">
 		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		                          <h4 class="modal-title">Forgot Password ?</h4>
-		                      </div>
-		                      <div class="modal-body">
+		                      </section>
+		                      <section class="modal-body">
 		                          <p>Enter your e-mail address below to reset your password.</p>
 		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
 		
-		                      </div>
-		                      <div class="modal-footer">
+		                      </section>
+		                      <section class="modal-footer">
 		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
 		                          <button class="btn btn-theme" type="button">Submit</button>
-		                      </div>
-		                  </div>
-		              </div>
-		          </div>
+		                      </section>
+		                  </section>
+		              </section>
+		          </section>
 		          <!-- modal -->
-		      </form>
+		      </section>
 				<form class="form-login" action="registro_1.html">
-				 <div class="login-wrap">
-				 <div class="registration">
+				 <section class="login-wrap">
+				 <section class="registration">
 		                No tienes una cuenta<br/>
 		                <a class="form-login-heading" href="login.html#myModal">
 							<button class="btn btn-theme btn-block"  type="submit"><i class="fa fa-lock"></i> Crear tu cuenta en SportsPub </button>
 		                    
 						 </a>
-		            </div>
-				 </div>
+		            </section>
+				 </section>
 				
 				
 			</form>
 			
 	  	
-	  	</div>
-	  </div>
+	  	</section>
+	  </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-
+     <script src="assets/metodos-javascript/loginjs.js"></script>
     <!--BACKSTRETCH-->
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
     <script>
+        $.backstretch("assets/img/fondo.jpg", {speed: 500});
         $.backstretch("assets/img/fondopri.jpg", {speed: 500});
     </script>
 

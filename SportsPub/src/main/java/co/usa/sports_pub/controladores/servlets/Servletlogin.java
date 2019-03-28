@@ -10,16 +10,23 @@ import co.usa.sports_pub.modelos.vo.Usuario;
 import co.usa.sports_pub.utils.Utils;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import static javax.ws.rs.client.Entity.json;
 
 /**
  *
  * @author sgome
  */
 public class Servletlogin extends HttpServlet {
+
+	HttpSession misession;
+	Usuario u;
 
 	/**
 	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -31,8 +38,7 @@ public class Servletlogin extends HttpServlet {
 	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
-		
+
 	}
 
 	// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -47,7 +53,15 @@ public class Servletlogin extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		processRequest(request, response);
+
+//		PrintWriter out=response.getWriter();
+		String logout = request.getParameter("logout");
+		misession = request.getSession();
+		if (logout != null && misession.getAttribute("usuario") != null) {
+			misession.invalidate();
+			response.sendRedirect("/SportsPub/index.html");
+		}
+
 	}
 
 	/**
@@ -61,30 +75,29 @@ public class Servletlogin extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	PrintWriter out= response.getWriter();
-	
-	
-		Usermanager um=new Usermanager();
-			
-	String user=request.getParameter("user");
-	String contrasena=request.getParameter("contrasena");
-	
-	 Usuario u=um.getUser(user);
-	 
-	 String contrase=u.getContrasena();
-	 
-	 
-	 
-	 
-	 if (contrasena.equals(contrase)) {
-		 
-		 out.println(Utils.toJson(u));
-			
+
+		misession = request.getSession(true);
+		Usermanager um = new Usermanager();
+        PrintWriter writer = response.getWriter();
+		String userJson = request.getParameter("userdata");
+		Usuario userj;
+		String user;
+		String contrasena;
+		userj = (Usuario) Utils.fromJson(userJson, Usuario.class);
+		user = userj.getUsuario();
+		contrasena = userj.getContrasena();
+		u = um.getUser(user);
+		String contrase = u.getContrasena();
+		if (contrasena.equals(contrase)) {
+			u.setContrasena(null);
+			String us = Utils.toJson(u);
+			misession.setAttribute("usuario", us);
+//			writer.println(Utils.toJson(misession.getAttribute("usuario")));
+			response.sendRedirect("/SportsPub/principal.html");
+		} else {
+			writer.print("Usuario o password incorrectos");
 		}
-	 
-	
-	
-	
+
 	}
 
 	/**
