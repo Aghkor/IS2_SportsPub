@@ -15,6 +15,8 @@
     <servlet>
         <servlet-name>Equipos</servlet-name>
         <servlet-class>co.usa.sports_pub.controladores.servlets.Equipos</servlet-class>
+        <servlet-name>pagina_inicio</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.pagina_inicio</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servletuser</servlet-name>
@@ -29,8 +31,13 @@
         <url-pattern>/Busquedas</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
         <servlet-name>Equipos</servlet-name>
         <url-pattern>/Equipos</url-pattern>
+=======
+        <servlet-name>pagina_inicio</servlet-name>
+        <url-pattern>/pagina_inicio</url-pattern>
+>>>>>>> origin/Santiago_IT1
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -7,19 +7,22 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Buscar jugador - SportsPub</title>
+    <title>Inicio - SportsPub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker.css" />
-    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" />
-        
+    <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">    
+    
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
+    <script src="assets/js/chart-master/Chart.js"></script>
+	  
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -33,21 +36,16 @@
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
-        <!--header start-->
+      <!--header start-->
       <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <!--logo start-->
-            <a href="principal.jsp" class="logo"><b>Sports Pub </b></a>
 	  <!--logo start-->
-            <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
+            <a href="principal.html" class="logo"><b>SportsPub</b></a>
             <!--logo end-->
-              <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.html">Logout</a></li>
-            	</ul>
-            </div>
+              <section class="top-menu">
+            	<form class="nav pull-right top-nav" method="get" action="Servletlogin">
+                    <button class="btn btn-theme btn-block" name="logout" value="1">Salir</button>
+            	</from>
+            </section>
         </header>
       <!--header end-->
       
@@ -59,9 +57,18 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
+              <%String msg = (String)session.getAttribute("user");
+			  if (msg == null) {
+           response.sendRedirect("index.html");
+        }
+			  
+			  
+			  %>
+
               	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Usuario</h5>
+              	  <h5 class="centered" id="user">
+                   <%= msg %>
+                  </h5>
               	  	
                   <li class="sub-menu">
                           <a href="javascript:;" >
@@ -69,8 +76,8 @@
                           <span>Muro</span>
                       </a>
 					  <ul class="sub">
-					      <li><a  href="principal.jsp">Inicio</a></li>  
-						       
+					      <li class="active"><a  href="principal.html">Inicio</a></li> 
+						  
                           <li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
                       </ul>
                   </li>
@@ -93,8 +100,8 @@
                           <span>Buscar</span>
                       </a>
                       <ul class="sub">
-                          
-                          <li class="active"><a  href="busq_jug.html">Buscar jugadores </a></li>
+                         
+                         <li><a  href="busq_jug.html">Buscar jugadores </a></li>
                           <li><a  href="busq_equipo.html">Buscar equipos</a></li>
                       </ul>
                   </li>
@@ -130,120 +137,39 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-      <section id="main-content">
+<section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Buscar perfil del jugador</h3>
-          	
-          	<!-- DATOS GENERALES -->
-          	<div class="row mt">
-          		<div class="col-lg-12">
-                  <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
-                      <form class="form-horizontal style-form" method="get">
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="usuario" type="text" >
-                              </div>
-                          </div>              
 
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Edad</label>
-                              <div class="col-sm-10">
-                                  <select class="form-control" id="edad">
-						  <option>17</option>
-						  <option>18</option>
-						  <option>19</option>
-						  <option>20</option>
-						  <option>21</option>
-						  <option>22</option>
-						  <option>23</option>
-						  <option>24</option>
-						  <option>25</option>
-						  <option>26</option>
-						  <option>27</option>
-						  <option>28</option>
-						  <option>29</option>
-						  <option>30</option>
-						  <option>31</option>
-						  <option>32</option>
-						  <option>33</option>
-						  <option>34</option>
-						  <option>35</option>
-						  <option>36</option>
-						  <option>37</option>
-						  <option>38</option>
-						  <option>39</option>
-						  <option>40</option>
-						 
-						</select>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Genero</label>
-                              <div class="col-sm-10">
-                                       <select class="form-control" id="genero" >
-                                        <option value="bog">Masculino</option>
-                                        <option value="med">Femenino</option>
-                                        </select>
-                              </div>
-                          </div>
-						  
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">valorizacion</label>
-                              <div class="col-sm-10">
-                                   <label for="radio1">1</label><!--
-                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                                --><label for="radio2">2</label><!--
-                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                                --><label for="radio3">3</label><!--
-                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                                --><label for="radio4">4</label><!--
-                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                                --><label for="radio5">5</label>
-                              </div>
-                          </div>						  
-						 <a class="btn btn-theme btn-block" >Buscar jugador</a>
-		          
-				  <hr>
-                          </div>
-                      </form>
-                  </div>
-          		</div><!-- col-lg-12-->      	
-          	</div><!-- /row -->
-          	
-          	          	
-          <!-- /row -->
-          	
-          	<!-- INPUT MESSAGES -->
-          
-          		
-          	<!-- CUSTOM TOGGLES -->
-          		<div class="row mt">
+              <div class="row">
+                  <div class="col-lg-9 main-chart">
+                  
+                  	           
+                      
+                      <div class="row mt">
                       <!-- SERVER STATUS PANELS -->
                       	<div class="col-md-4 col-sm-4 mb">
 							<!-- WHITE PANEL - TOP USER -->
 							<div class="white-panel pn">
 								<div class="white-header">
-									<h5>Jugador</h5>
+									<h5>Evento futbol 5</h5>
 								</div>
-								
+								<p><img src="assets/img/ui-zac.jpg" class="img-circle" width="55"></p>
 								<p><b></b></p>
 								<div class="row">
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION </p>
-										<p>Nombre</p>
-										<p>Apellido</p>
+										<p>Equipo:</p>
+										<p>Ubicacion:</p>
 									</div>
 									<div class="col-md-6">
-										<p class="small mt">INFORMACION</p>
-										<p>Edad</p>
-										<p>Genero</p>
+										<p class="small mt">SE SOLICITA</p>
+										<p>Integrantes:</p>
+										<p>Genero:</p>
 
 									</div>
 									
 								</div>
-								<a class="btn btn-theme " href="perfil.html">Contactar jugador</a>
+								<a class="btn btn-theme " href="detalles_evento.html">Detalles Evento</a>
 							</div>
 						</div>
                       	
@@ -252,25 +178,25 @@
 							<!-- WHITE PANEL - TOP USER -->
 							<div class="white-panel pn">
 								<div class="white-header">
-									<h5>Jugador</h5>
+									<h5>Evento futbol 5</h5>
 								</div>
-								
+								<p><img src="assets/img/ui-zac.jpg" class="img-circle" width="55"></p>
 								<p><b></b></p>
 								<div class="row">
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION </p>
-										<p>Nombre</p>
-										<p>Equipo</p>
+										<p>Equipo:</p>
+										<p>Ubicacion:</p>
 									</div>
 									<div class="col-md-6">
-										<p class="small mt">INFORMACION</p>
-										<p>Edad</p>
-										<p>Genero</p>
+										<p class="small mt">SE SOLICITA</p>
+										<p>Integrantes:</p>
+										<p>Genero:</p>
 
 									</div>
 									
 								</div>
-								<a class="btn btn-theme " href="perfil.html">Contactar Jugador</a>
+								<a class="btn btn-theme " href="detalles_evento.html">Detalles Evento</a>
 							</div>
 						</div><!-- /col-md-4 -->
                       	
@@ -278,82 +204,74 @@
 							<!-- WHITE PANEL - TOP USER -->
 							<div class="white-panel pn">
 								<div class="white-header">
-									<h5>Jugador</h5>
+									<h5>Evento futbol 5</h5>
 								</div>
-								
+								<p><img src="assets/img/ui-zac.jpg" class="img-circle" width="55"></p>
 								<p><b></b></p>
 								<div class="row">
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION </p>
-										<p>Nombre</p>
-										<p>Apellido</p>
+										<p>Equipo:</p>
+										<p>Ubicacion:</p>
 									</div>
 									<div class="col-md-6">
-										<p class="small mt">INFORMACION</p>
-										<p>Edad</p>
-										<p>Genero</p>
+										<p class="small mt">SE SOLICITA</p>
+										<p>Integrantes:</p>
+										<p>Genero:</p>
 
 									</div>
 									
 								</div>
-								<a class="btn btn-theme" href="perfil.html">Contactar Jugador</a>
+								<a class="btn btn-theme " href="detalles_evento.html">Detalles Evento</a>
 							</div>
 						</div>><!-- /col-md-4 -->
                       	
 
                     </div><!-- /row -->
-          	</div><!-- /row -->
-          	
-          	
-		</section><! --/wrapper -->
-      </section><!-- /MAIN CONTENT -->
+                    
+                    				
+				
+						</div><!-- /col-md-4 -->
+						
+					</div><!-- /row -->
+				
+      <!-- **********************************************************************************************************************************************************
+      RIGHT SIDEBAR CONTENT
+      *********************************************************************************************************************************************************** -->                  
+                 
+          </section>
+      </section>
 
       <!--main content end-->
       <!--footer start-->
-      
+      <
       <!--footer end-->
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+	<script src="assets/metodos-javascript/paginicioJS.js"></script>
 
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
+    
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
-
-	<!--custom switch-->
-	<script src="assets/js/bootstrap-switch.js"></script>
-	
-	<!--custom tagsinput-->
-	<script src="assets/js/jquery.tagsinput.js"></script>
-	
-	<!--custom checkbox & radio-->
-	
-	<script type="text/javascript" src="assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/date.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
-	
-	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+    <script src="assets/js/sparkline-chart.js"></script>    
+	<script src="assets/js/zabuto_calendar.js"></script>	
 	
 	
-	<script src="assets/js/form-component.js"></script>    
-    
-    
-  <script>
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
-  </script>
+  
 
   </body>
 </html>
+             
