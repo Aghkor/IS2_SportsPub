@@ -44,7 +44,7 @@
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.html">Logout</a></li>
+                    <li><a class="logout" href="index.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -59,7 +59,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="perfil.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -69,7 +69,7 @@
                       </a>
 					  <ul class="sub">
 					      <li><a  href="principal.jsp">Inicio</a></li>  
-                          <li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
+                          <li><a  href="pub_evento.jsp">Publicar evento nuevo</a></li>                          
                       </ul>
                   </li>
 
@@ -79,8 +79,8 @@
                           <span>Equipo de futbol</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
-						  <li><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
+                          <li><a  href="crear_eqfut5.jsp">Crear equipo de futbol 5</a></li>
+						  <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>
@@ -92,8 +92,8 @@
                       </a>
                       <ul class="sub">
                           
-                        <li><a  href="busq_jug.html">Buscar jugadores </a></li>
-                          <li><a  href="busq_equipo.html">Buscar equipos</a></li>
+                        <li><a  href="busq_jug.jsp">Buscar jugadores </a></li>
+                          <li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -102,9 +102,9 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.html">Perfil Usuario</a></li>
-                          <li class="active"><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
-						  <li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
+                          <li><a  href="perfil.jsp">Perfil Usuario</a></li>
+                          <li class="active"><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
+						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -113,9 +113,9 @@
                           <span>Configuracion </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="config_perfilusuario.html">Configurar perfil </a></li>
-						  <li><a  href="config_eq5.html">configurar equipo futbol 5 </a></li>
-						  <li><a  href="config_eq8.html">configurar equipo futbol 8 </a></li>
+                          <li><a  href="config_perfilusuario.jsp">Configurar perfil </a></li>
+						  <li><a  href="config_eq5.jsp">configurar equipo futbol 5 </a></li>
+						  <li><a  href="config_eq8.jsp">configurar equipo futbol 8 </a></li>
                       </ul>
                   </li>
                 </ul>
@@ -198,7 +198,7 @@
 							   </br>
 						  
 
-                        <a class="btn btn-theme btn-block  " href="config_eq5.html">Configuracion del equipo futbol 5</a>
+                        <a class="btn btn-theme btn-block  " href="config_eq5.jsp">Configuracion del equipo futbol 5</a>
 		            <hr>
                           </div>
                       </form>

@@ -40,6 +40,13 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Equipo.findByCantidadDeJugador", query = "SELECT e FROM Equipo e WHERE e.cantidadDeJugador = :cantidadDeJugador")})
 public class Equipo implements Serializable {
 
+	@OneToMany(mappedBy = "ide")
+	private Collection<EncuentroEquipo> encuentroEquipoCollection;
+
+	@Size(max = 2)
+    @Column(name = "disponibilidad")
+	private String disponibilidad;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -213,5 +220,22 @@ public class Equipo implements Serializable {
     public String toString() {
         return "co.usa.sports_pub.modelos.vo.Equipo[ ide=" + ide + " ]";
     }
+
+	public String getDisponibilidad() {
+		return disponibilidad;
+	}
+
+	public void setDisponibilidad(String disponibilidad) {
+		this.disponibilidad = disponibilidad;
+	}
+
+	@XmlTransient
+	public Collection<EncuentroEquipo> getEncuentroEquipoCollection() {
+		return encuentroEquipoCollection;
+	}
+
+	public void setEncuentroEquipoCollection(Collection<EncuentroEquipo> encuentroEquipoCollection) {
+		this.encuentroEquipoCollection = encuentroEquipoCollection;
+	}
     
 }

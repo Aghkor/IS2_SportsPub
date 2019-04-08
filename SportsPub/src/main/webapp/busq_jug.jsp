@@ -7,7 +7,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Perfil Configuracion - SportsPub</title>
+    <title>Buscar jugador - SportsPub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -39,13 +39,13 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="principal.jsp" class="logo"><b>Usuario </b></a>
+            <a href="principal.jsp" class="logo"><b>Sports Pub </b></a>
 	  <!--logo start-->
             <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.html">Logout</a></li>
+                    <li><a class="logout" href="index.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -55,12 +55,12 @@
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
-       <aside>
+      <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="perfil.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -70,7 +70,8 @@
                       </a>
 					  <ul class="sub">
 					      <li><a  href="principal.jsp">Inicio</a></li>  
-                          <li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
+						       
+                          <li><a  href="pub_evento.jsp">Publicar evento nuevo</a></li>                          
                       </ul>
                   </li>
 
@@ -80,8 +81,8 @@
                           <span>Equipo de futbol</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
-						  <li><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
+                          <li><a  href="crear_eqfut5.jsp">Crear equipo de futbol 5</a></li>
+						  <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>
@@ -92,9 +93,9 @@
                           <span>Buscar</span>
                       </a>
                       <ul class="sub">
-                         
-                          <li><a  href="busq_jug.html">Buscar jugadores </a></li>
-                          <li><a  href="busq_equipo.html">Buscar equipos</a></li>
+                          
+                          <li class="active"><a  href="busq_jug.jsp">Buscar jugadores </a></li>
+                          <li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -103,9 +104,9 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.html">Perfil Usuario</a></li>
-                          <li><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
-						  <li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
+                          <li><a  href="perfil.jsp">Perfil Usuario</a></li>
+                          <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
+						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -114,9 +115,9 @@
                           <span>Configuracion </span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="config_perfilusuario.html">Configurar perfil </a></li>
-						  <li><a  href="config_eq5.html">configurar equipo futbol 5 </a></li>
-						  <li><a  href="config_eq8.html">configurar equipo futbol 8 </a></li>
+                          <li><a  href="config_perfilusuario.jsp">Configurar perfil </a></li>
+						  <li><a  href="config_eq5.jsp">configurar equipo futbol 5 </a></li>
+						  <li><a  href="config_eq8.jsp">configurar equipo futbol 8 </a></li>
                       </ul>
                   </li>
                 </ul>
@@ -128,52 +129,28 @@
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
-      <!--Configuracion del Perfil-->
+      <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Perfil Configuracion </h3>
+          	<h3><i class="fa fa-angle-right"></i> Buscar perfil del jugador</h3>
           	
-         <!-- DATOS GENERALES -->
+          	<!-- DATOS GENERALES -->
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
                       <form class="form-horizontal style-form" method="get">
-                        <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Usuario </label>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
                               <div class="col-sm-10">
                                   <input type="text" class="form-control" id="usuario" type="text" >
                               </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="nombre" type="text" >
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Apellido </label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="Apellido" type="text">
-                               </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Correo Electronico </label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="email" type="text" >
-                              </div>
-                          </div>
-						  <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Celular </label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="celular" type="text" >
-                              </div>
-                          </div>
+                          </div>              
 
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Edad</label>
                               <div class="col-sm-10">
-                                  <select class="form-control" id="edad" >
+                                  <select class="form-control" id="edad">
 						  <option>17</option>
 						  <option>18</option>
 						  <option>19</option>
@@ -205,23 +182,17 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
                               <div class="col-sm-10">
-                                   <select class="form-control" id="genero" >
+                                       <select class="form-control" id="genero" >
                                         <option value="bog">Masculino</option>
                                         <option value="med">Femenino</option>
-                                        
-										 </select>
+                                        </select>
                               </div>
                           </div>
 						  
-						  
-						  
-						  
-
-						  
-                          <label class="col-sm-2 col-sm-2 control-label">Valorizacion del jugador</label>
-						  <div class="valoracion" id="valorizacion" >
-                               <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                                --><label for="radio1">1</label><!--
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">valorizacion</label>
+                              <div class="col-sm-10">
+                                   <label for="radio1">1</label><!--
                                 --><input id="radio2" type="radio" name="estrellas" value="4"><!--
                                 --><label for="radio2">2</label><!--
                                 --><input id="radio3" type="radio" name="estrellas" value="3"><!--
@@ -230,11 +201,9 @@
                                 --><label for="radio4">4</label><!--
                                 --><input id="radio5" type="radio" name="estrellas" value="1"><!--
                                 --><label for="radio5">5</label>
-                               </div>
-							   </br>
-						  
-						  
-						 <a class="btn btn-theme btn-block " href="config_perfilusuario.html" type="s">Guardar cambios</a>
+                              </div>
+                          </div>						  
+						 <a class="btn btn-theme btn-block" >Buscar jugador</a>
 		          
 				  <hr>
                           </div>
@@ -243,63 +212,105 @@
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
           	
+          	          	
+          <!-- /row -->
           	
-
-			
-			<!-- DATOS DE SUS EQUIPOS -->
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          			<div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> EQUIPOS FUTBOL 5 </h4>
-                          <form class="form-horizontal tasi-form" method="get">
-                              <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >FUTBOL 5 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5_1" disabled>
-                                  </div>
-                              </div>
-                              
-
-							  <button class="btn btn-theme btn-block" href="index.html" type="submit"> SALIR DEL EQUIPO  </button>
-		            <hr>
-                          </form>
-          			</div>
-					<!-- /form-panel -->
-          		</div><!-- /col-lg-12 -->
-          	</div><!-- /row -->
-          	
-			
-			<!-- DATOS DE SUS EQUIPOS -->
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          			<div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> EQUIPOS FUTBOL 8 </h4>
-                          <form class="form-horizontal tasi-form" method="get">
-                              <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >FUTBOL 8</label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5_1" disabled>
-                                  </div>
-                              </div>
-                              
-
-							  <button class="btn btn-theme btn-block" href="index.html" type="submit"> SALIR DEL EQUIPO  </button>
-		            <hr>
-                          </form>
-          			</div>
-					<!-- /form-panel -->
-          		</div><!-- /col-lg-12 -->
-          	</div><!-- /row -->
-			
-         
+          	<!-- INPUT MESSAGES -->
           
+          		
+          	<!-- CUSTOM TOGGLES -->
+          		<div class="row mt">
+                      <!-- SERVER STATUS PANELS -->
+                      	<div class="col-md-4 col-sm-4 mb">
+							<!-- WHITE PANEL - TOP USER -->
+							<div class="white-panel pn">
+								<div class="white-header">
+									<h5>Jugador</h5>
+								</div>
+								
+								<p><b></b></p>
+								<div class="row">
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION </p>
+										<p>Nombre</p>
+										<p>Apellido</p>
+									</div>
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION</p>
+										<p>Edad</p>
+										<p>Genero</p>
+
+									</div>
+									
+								</div>
+								<a class="btn btn-theme " href="perfil.jsp">Contactar jugador</a>
+							</div>
+						</div>
+                      	
+
+                      	<div class="col-md-4 col-sm-4 mb">
+							<!-- WHITE PANEL - TOP USER -->
+							<div class="white-panel pn">
+								<div class="white-header">
+									<h5>Jugador</h5>
+								</div>
+								
+								<p><b></b></p>
+								<div class="row">
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION </p>
+										<p>Nombre</p>
+										<p>Equipo</p>
+									</div>
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION</p>
+										<p>Edad</p>
+										<p>Genero</p>
+
+									</div>
+									
+								</div>
+								<a class="btn btn-theme " href="perfil.jsp">Contactar Jugador</a>
+							</div>
+						</div><!-- /col-md-4 -->
+                      	
+						<div class="col-md-4 col-sm-4 mb">
+							<!-- WHITE PANEL - TOP USER -->
+							<div class="white-panel pn">
+								<div class="white-header">
+									<h5>Jugador</h5>
+								</div>
+								
+								<p><b></b></p>
+								<div class="row">
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION </p>
+										<p>Nombre</p>
+										<p>Apellido</p>
+									</div>
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION</p>
+										<p>Edad</p>
+										<p>Genero</p>
+
+									</div>
+									
+								</div>
+								<a class="btn btn-theme" href="perfil.jsp">Contactar Jugador</a>
+							</div>
+						</div>><!-- /col-md-4 -->
+                      	
+
+                    </div><!-- /row -->
+          	</div><!-- /row -->
+          	
           	
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
-     
+      
       <!--footer end-->
   </section>
 

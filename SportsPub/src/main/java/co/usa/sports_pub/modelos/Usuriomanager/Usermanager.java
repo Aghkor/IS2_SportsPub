@@ -24,11 +24,12 @@ public class Usermanager {
 		Usuario u = (Usuario) Utils.fromJson(json, Usuario.class);
 		
 		List<Usuario> us = ud.getObject(u);
+		List<Usuario> um= ud.getEmail(u);
 	
-        if (us.isEmpty() ) {
+        if (us.isEmpty() && um.isEmpty() ) {
 			ud.insertObject(u);
 			return "Usaurio registrado correctamente";
-		}else if (us.isEmpty()== false) {
+		}else if (us.isEmpty()== false || um.isEmpty() == false ) {
 			return "Usuario o email ya existente";
 		} else{
 		     return "error en el registro de usuario intente nuevamente";
@@ -40,8 +41,10 @@ public class Usermanager {
 		Usuario u = new Usuario();
 		u.setUsuario(user);
 		List<Usuario> us = ud.getObject(u);
-
-		return us.get(0);
+         if (us.isEmpty()) {
+			return null;
+		}else{
+		return us.get(0);}
 	}
 
 //	public List<Usuario> disponibles() {

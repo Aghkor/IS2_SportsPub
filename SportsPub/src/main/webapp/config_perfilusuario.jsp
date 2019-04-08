@@ -7,19 +7,24 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Perfil - SportsPub</title>
+    <title>Perfil Configuracion - SportsPub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-   
+    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" />
         
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
-    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
@@ -34,13 +39,13 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="principal.jsp" class="logo"><b>Sports Pub </b></a>
+            <a href="principal.jsp" class="logo"><b>Usuario </b></a>
 	  <!--logo start-->
             <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.html">Logout</a></li>
+                    <li><a class="logout" href="index.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -50,13 +55,13 @@
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
-      <aside>
+       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered" id="usuario_encabezado">Usuario</h5>
+              	  <p class="centered"><a href="perfil.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
                           <a href="javascript:;" >
@@ -65,8 +70,7 @@
                       </a>
 					  <ul class="sub">
 					      <li><a  href="principal.jsp">Inicio</a></li>  
-						       
-                          <li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
+                          <li><a  href="pub_evento.jsp">Publicar evento nuevo</a></li>                          
                       </ul>
                   </li>
 
@@ -76,8 +80,8 @@
                           <span>Equipo de futbol</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
-						  <li><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
+                          <li><a  href="crear_eqfut5.jsp">Crear equipo de futbol 5</a></li>
+						  <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>
@@ -88,9 +92,9 @@
                           <span>Buscar</span>
                       </a>
                       <ul class="sub">
-                          
-                          <li><a  href="busq_jug.html">Buscar jugadores </a></li>
-                          <li><a  href="busq_equipo.html">Buscar equipos</a></li>
+                         
+                          <li><a  href="busq_jug.jsp">Buscar jugadores </a></li>
+                          <li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -99,9 +103,9 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="perfil.html">Perfil Usuario</a></li>
-                          <li><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
-						  <li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
+                          <li><a  href="perfil.jsp">Perfil Usuario</a></li>
+                          <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
+						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -110,9 +114,9 @@
                           <span>Configuracion </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="config_perfilusuario.html">Configurar perfil </a></li>
-						  <li><a  href="config_eq5.html">configurar equipo futbol 5 </a></li>
-						  <li><a  href="config_eq8.html">configurar equipo futbol 8 </a></li>
+                          <li class="active"><a  href="config_perfilusuario.jsp">Configurar perfil </a></li>
+						  <li><a  href="config_eq5.jsp">configurar equipo futbol 5 </a></li>
+						  <li><a  href="config_eq8.jsp">configurar equipo futbol 8 </a></li>
                       </ul>
                   </li>
                 </ul>
@@ -124,56 +128,52 @@
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
-      <!--main content start-->
+      <!--Configuracion del Perfil-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Perfil Usuario</h3>
+          	<h3><i class="fa fa-angle-right"></i> Perfil Configuracion </h3>
           	
-          	<!-- DATOS GENERALES -->
+         <!-- DATOS GENERALES -->
           	<div class="row mt">
-          	<div class="col-lg-12">
-                  <div class="form-panel" id="contenedor">
-                   <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
-                    <form class="form-horizontal style-form" method="get"> 
-                    <button class="btn btn-theme "  type="submit" id="boton1"> Mostrar Datos </button>
-                      
-                      
-                       
-			 <div class="form-group">
+          		<div class="col-lg-12">
+                  <div class="form-panel">
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
+                      <form class="form-horizontal style-form" method="get">
+                        <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Usuario </label>
-                              <div class="col-sm-10" >
-                                  <input type="text" class="form-control" id="usuario"  disabled>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="usuario" type="text" >
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="nombre" value=""  disabled>
+                                  <input type="text" class="form-control" id="nombre" type="text" >
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Apellido </label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="apellido"  disabled>
+                                  <input type="text" class="form-control" id="Apellido" type="text">
                                </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Correo Electronico </label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="email" t disabled>
+                                  <input type="text" class="form-control" id="email" type="text" >
                               </div>
                           </div>
 						  <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Celular </label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="celular"  disabled>
+                                  <input type="text" class="form-control" id="celular" type="text" >
                               </div>
                           </div>
 
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Edad</label>
                               <div class="col-sm-10">
-            <select class="form-control" id="edad" disabled>
+                                  <select class="form-control" id="edad" >
 						  <option>17</option>
 						  <option>18</option>
 						  <option>19</option>
@@ -197,14 +197,15 @@
 						  <option>37</option>
 						  <option>38</option>
 						  <option>39</option>
-						  <option>40</option>						 
+						  <option>40</option>
+						 
 						</select>
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
                               <div class="col-sm-10">
-                                   <select class="form-control" id="genero"     disabled>
+                                   <select class="form-control" id="genero" >
                                         <option value="bog">Masculino</option>
                                         <option value="med">Femenino</option>
                                         
@@ -230,87 +231,77 @@
                                 --><input id="radio5" type="radio" name="estrellas" value="1"><!--
                                 --><label for="radio5">5</label>
                                </div>
-
 							   </br>
-							   
-							  
-							   
 						  
-			<a class="btn btn-theme  " href="config_perfilusuario.html">Configuracion del perfil</a>
+						  
+						 <a class="btn btn-theme btn-block " href="config_perfilusuario.jsp" type="s">Guardar cambios</a>
 		          
 				  <hr>
                           </div>
-      </form>
+                      </form>
                   </div>
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
           	
-          	          	
-          	<!-- DATOS DE SUS EQUIPOS -->
+          	
+
+			
+			<!-- DATOS DE SUS EQUIPOS -->
           	<div class="row mt">
           		<div class="col-lg-12">
           			<div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> EQUIPOS FUTBOL 5 </h4>
                           <form class="form-horizontal tasi-form" method="get">
-                              <div class="form-group " id="contenedor2">
+                              <div class="form-group ">
                                   <label class="col-sm-2 control-label col-lg-2" >FUTBOL 5 </label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5" disabled>
-                                      
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
                                   </div>
                               </div>
-                                    
+                              
 
-			<button class="btn btn-theme btn-block" href="perfilequipo5.html" type="submit"><i class="fa fa-lock"></i> VER PERFIL DE LOS EQUIPOS </button>
+							  <button class="btn btn-theme btn-block" href="index.jsp" type="submit"> SALIR DEL EQUIPO  </button>
 		            <hr>
                           </form>
-          			</div><!-- /form-panel -->
+          			</div>
+					<!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
           	</div><!-- /row -->
+          	
 			
-			         	<!-- DATOS DE SUS EQUIPOS -->
+			<!-- DATOS DE SUS EQUIPOS -->
           	<div class="row mt">
           		<div class="col-lg-12">
           			<div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> EQUIPOS FUTBOL 8</h4>
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> EQUIPOS FUTBOL 8 </h4>
                           <form class="form-horizontal tasi-form" method="get">
-                            
-                             
-				<div class="form-group" id="contenedor3">
-                                  <label class="col-sm-2 control-label col-lg-2" >FUTBOL 8
-								  </label>
+                              <div class="form-group ">
+                                  <label class="col-sm-2 control-label col-lg-2" >FUTBOL 8</label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8" disabled>
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
                                   </div>
                               </div>
-                <p id="demo"></p>
-							  <button class="btn btn-theme btn-block" href="perfilequipo8.html" type="submit"><i class="fa fa-lock"></i> VER PERFIL DE LOS EQUIPOS</button>
+                              
+
+							  <button class="btn btn-theme btn-block" href="index.jsp" type="submit"> SALIR DEL EQUIPO  </button>
 		            <hr>
                           </form>
-          			</div><!-- /form-panel -->
+          			</div>
+					<!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
           	</div><!-- /row -->
-          	
-          	<!-- INPUT MESSAGES -->
+			
+         
           
-          		
-          	<!-- CUSTOM TOGGLES -->
-          		
-          	</div><!-- /row -->
           	
-          	
-		</section>
-          </section><!-- /MAIN CONTENT -->
+		</section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
-      
+     
       <!--footer end-->
   </section>
-
-
-   <!-- AJAX DEL PERFIL.HTML-->
-     <script src="assets/metodos-javascript/perfil_jvs.js"></script>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
@@ -318,27 +309,40 @@
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+
+
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
+
     <!--script for this page-->
     <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+
 	<!--custom switch-->
-	<script src="assets/js/bootstrap-switch.js"></script>	
+	<script src="assets/js/bootstrap-switch.js"></script>
+	
 	<!--custom tagsinput-->
 	<script src="assets/js/jquery.tagsinput.js"></script>
+	
 	<!--custom checkbox & radio-->
 	
+	<script type="text/javascript" src="assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/date.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 	
-	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>	
-	<script src="assets/js/form-component.js"></script>     
- 
+	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+	
+	
+	<script src="assets/js/form-component.js"></script>    
+    
+    
+  <script>
+      //custom select box
 
- <script></script>
+      $(function(){
+          $('select.styled').customSelect();
+      });
 
-
-
-  
-
+  </script>
 
   </body>
 </html>

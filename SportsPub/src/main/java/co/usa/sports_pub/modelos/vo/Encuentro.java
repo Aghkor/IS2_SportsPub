@@ -40,6 +40,17 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Encuentro.findByTiempoEspera", query = "SELECT e FROM Encuentro e WHERE e.tiempoEspera = :tiempoEspera")})
 public class Encuentro implements Serializable {
 
+	@OneToMany(mappedBy = "idp")
+	private Collection<EncuentroEquipo> encuentroEquipoCollection;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idp")
+	private Collection<EncuentroUsuario> encuentroUsuarioCollection;
+
+	@Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "condiciones")
+	private String condiciones;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -71,6 +82,9 @@ public class Encuentro implements Serializable {
     @JoinColumn(name = "ide2", referencedColumnName = "ide")
     @ManyToOne(optional = false)
     private Equipo ide2;
+	
+	private String equipo1;
+	private String equipo2;
 
     public Encuentro() {
     }
@@ -176,5 +190,41 @@ public class Encuentro implements Serializable {
     public String toString() {
         return "co.usa.sports_pub.modelos.vo.Encuentro[ idp=" + idp + " ]";
     }
+
+	public String getCondiciones() {
+		return condiciones;
+	}
+
+	public void setCondiciones(String condiciones) {
+		this.condiciones = condiciones;
+	}
+	
+	public String getEquipo1(){
+	
+		return this.equipo1;
+	}
+	
+	public String getEquipo2(){
+	
+		return this.equipo2;
+	}
+
+	@XmlTransient
+	public Collection<EncuentroEquipo> getEncuentroEquipoCollection() {
+		return encuentroEquipoCollection;
+	}
+
+	public void setEncuentroEquipoCollection(Collection<EncuentroEquipo> encuentroEquipoCollection) {
+		this.encuentroEquipoCollection = encuentroEquipoCollection;
+	}
+
+	@XmlTransient
+	public Collection<EncuentroUsuario> getEncuentroUsuarioCollection() {
+		return encuentroUsuarioCollection;
+	}
+
+	public void setEncuentroUsuarioCollection(Collection<EncuentroUsuario> encuentroUsuarioCollection) {
+		this.encuentroUsuarioCollection = encuentroUsuarioCollection;
+	}
     
 }
