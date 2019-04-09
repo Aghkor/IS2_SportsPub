@@ -106,9 +106,9 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="perfil.jsp">Perfil Usuario</a></li>
+                          <li class="active"><a  href="perfil_usuario.jsp">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
-						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
+			  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -142,7 +142,8 @@
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
 					  
-                       <form class="form-horizontal style-form" method="post"> 
+                       <form class="form-horizontal style-form" method="post">       
+
                         
 					                   <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Usuario </label>
@@ -215,12 +216,13 @@
 							  
 							   
 						  
-			<button class="btn btn-theme  " href="config_perfilusuario.jsp">Configuracion del perfil</button>
+			<button class="btn btn-theme  " type="button"href="config_perfilusuario.jsp">Configuracion del perfil</button>
                         <button class="btn btn-theme  " type="button" id="MostrarDatos" >Mostrar Datos</button>
+                        </form>
 		          
 				  <hr>
                           </div>
-      </form>
+     
                   </div>
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
@@ -228,6 +230,7 @@
           	          	
           	<!-- DATOS DE SUS EQUIPOS -->
           	<div class="row mt">
+                                           
           		<div class="col-lg-12">
           			<div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> EQUIPOS FUTBOL 5 </h4>
@@ -235,15 +238,16 @@
                               <div class="form-group ">
                                   <label class="col-sm-2 control-label col-lg-2" >FUTBOL 5 </label>
                                   <div class="col-lg-10">
-                                      <output type="text" class="form-control" id="futbol5_1" disabled></output>>
+                                      <output type="text" class="form-control" id="futbol5" disabled></output>
                                   </div>
                               </div>
                                     
 
-			<button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> VER PERFIL DE LOS EQUIPOS </button>
+			<a class="btn btn-theme btn-block" href="perfilequipo5.jsp" type="button"> Ver perfil equipo 5  </a>
+                     
 		            <hr>
                           </form>
-          			</div><!-- /form-panel -->
+          		</div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
           	</div><!-- /row -->
 			
@@ -259,11 +263,11 @@
                                   <label class="col-sm-2 control-label col-lg-2" >FUTBOL 8
 								  </label>
                                   <div class="col-lg-10">
-                                      <output type="text" class="form-control" id="futbol8_2" disabled></output>
+                                      <output type="text" class="form-control" id="futbol8" disabled></output>
                                   </div>
                               </div>
                        
-			 <button class="btn btn-theme btn-block" href="perfilequipo8.html" type="submit"><i class="fa fa-lock"></i> VER PERFIL DE LOS EQUIPOS</button>
+			 <a class="btn btn-theme btn-block" href="perfilequipo8.html" type="button"> Ver perfil equipo 8</a>
 		            <hr>
                           </form>
           			</div><!-- /form-panel -->
@@ -292,22 +296,28 @@
             $.post("Servletperfiluser",$(document.forms[0]),function(response){
                 
                 var usuario = document.getElementById("usuario");
+                var usuarioen = document.getElementById("usuario_encabezado");
                 var nombre = document.getElementById("nombre");
                 var apellido = document.getElementById("apellido");
                 var correo = document.getElementById("email");
                 var edad= document.getElementById("edad");
                 var celular = document.getElementById("celular");
-                var genero = document.getElementById("genero");            
-                var datos = JSON.parse(response);          
+                var genero = document.getElementById("genero");   
+                var eqfut5 = document.getElementById("futbol5");
+                var eqfut8 = document.getElementById("futbol8");
+                var datos = JSON.parse(response);         
+                console.log(datos.persona);
                 
-                
-                usuario.innerHTML += datos.persona.usuario;
+                usuarioen.innerHTML += datos.persona.usuario;
+                usuario.innerHTML += datos.persona.usuario;                
                 nombre.innerHTML += datos.persona.nombre;
                 apellido.innerHTML += datos.persona.apellido;
                 correo.innerHTML += datos.persona.email;
                 edad.innerHTML += datos.persona.edad;
                 celular.innerHTML += datos.persona.celular;
                 genero.innerHTML += datos.persona.genero; 
+                eqfut5.innerHTML += datos.persona.eqfut_5;
+                eqfut8.innerHTML += datos.persona.eqfut_8;
                 
                 
                 
@@ -316,6 +326,8 @@
         },false);
           
       </script>
+     
+      
 
 
    
