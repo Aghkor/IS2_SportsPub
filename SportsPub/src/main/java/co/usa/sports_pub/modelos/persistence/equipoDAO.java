@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
 
 /**
  *
- * @author sgome
+ * @author fabio segura
  */
 public class equipoDAO {
 
@@ -118,4 +118,35 @@ public class equipoDAO {
         
        
 
+
+
+
+	public List<Equipo> getID(String name) {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Equipo> query = (TypedQuery<Equipo>) en.createQuery(
+					"SELECT e FROM Equipo e WHERE e.nombre = :nombre", Equipo.class);
+  
+			query.setParameter("nombre",name);
+			
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
+	
+	
 }

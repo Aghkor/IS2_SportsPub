@@ -48,6 +48,8 @@ public class Equipo implements Serializable {
     @Column(name = "disponibilidad")
 	private String disponibilidad;
 
+
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
