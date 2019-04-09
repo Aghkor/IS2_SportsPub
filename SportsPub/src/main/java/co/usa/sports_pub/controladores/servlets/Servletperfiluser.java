@@ -68,9 +68,11 @@ public class Servletperfiluser extends HttpServlet {
         String email = "correo@electronico"; //request.getParameter("email");
         String celular = "213132";// request.getParameter("celular");
         String edad = "21";//request.getParameter("edad");
-        String genero ="masculino";// request.getParameter("genero");       
+        String genero ="masculino";// request.getParameter("genero");    
+        String eqfut_5= "Niupi"; //request.getParameter("eqfut_5");
+        String eqfut_8= "LosMillos"; //request.getParameter("eqfut_8");
         String JSON = "{\"persona\": {\"usuario\":\"" + usuario + "\",\"nombre\":\""+ nombre + "\",\"apellido\":\"" + apellido + "\",\"email\":\""
-                + email + "\",\"celular\":\"" + celular + "\",\"edad\":\"" + edad + "\",\"genero\":\"" + genero +  "\"}}" ;
+                + email + "\",\"celular\":\"" + celular + "\",\"edad\":\"" + edad + "\",\"genero\":\"" + genero + "\",\"futeq5\":\"" + eqfut_5 + "\",\"futeq8 \":\"" + eqfut_8 + "\"}}" ;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
              out.print(JSON);
