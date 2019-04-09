@@ -18,6 +18,14 @@
         <servlet-name>pagina_inicio</servlet-name>
         <servlet-class>co.usa.sports_pub.controladores.servlets.pagina_inicio</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>publicacionEventos</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.publicacionEventos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletEvents</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.ServletEvents</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servletuser</servlet-name>
         <url-pattern>/Servletuser</url-pattern>
@@ -38,6 +46,14 @@
         <servlet-name>pagina_inicio</servlet-name>
         <url-pattern>/pagina_inicio</url-pattern>
 >>>>>>> origin/Santiago_IT1
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>publicacionEventos</servlet-name>
+        <url-pattern>/publicacionEventos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletEvents</servlet-name>
+        <url-pattern>/ServletEvents</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

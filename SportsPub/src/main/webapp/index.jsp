@@ -43,7 +43,7 @@
 					<input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
 		            <label class="checkbox">
 		                <span class="pull-right">
-		                    <a data-toggle="modal" href="login.html#myModal"> Olvidaste tu contraseña?</a>
+		                    <a data-toggle="modal" href="login.jsp#myModal"> Olvidaste tu contraseña?</a>
 		
 		                </span>
 		            </label>
@@ -73,11 +73,11 @@
 		          </section>
 		          <!-- modal -->
 		      </section>
-				<form class="form-login" action="registro_1.html">
+				<form class="form-login" action="registro_1.jsp">
 				 <section class="login-wrap">
 				 <section class="registration">
 		                No tienes una cuenta<br/>
-		                <a class="form-login-heading" href="login.html#myModal">
+		                <a class="form-login-heading" href="login.jsp#myModal">
 							<button class="btn btn-theme btn-block"  type="submit"><i class="fa fa-lock"></i> Crear tu cuenta en SportsPub </button>
 		                    
 						 </a>
