@@ -7,10 +7,12 @@ package co.usa.sports_pub.modelos.Usuriomanager;
 
 import co.usa.sports_pub.modelos.persistence.equipoDAO;
 import co.usa.sports_pub.modelos.persistence.eventsDAO;
+import co.usa.sports_pub.modelos.persistence.userDAO;
 import co.usa.sports_pub.modelos.vo.Encuentro;
 import co.usa.sports_pub.modelos.vo.EncuentroEquipo;
 import co.usa.sports_pub.modelos.vo.Equipo;
 import co.usa.sports_pub.modelos.vo.Usuario;
+import co.usa.sports_pub.modelos.vo.UsuarioEquipo;
 import java.util.List;
 
 /**
@@ -44,12 +46,23 @@ public class Eventsmanager {
 
 		e.setIde1(e1);
 		e.setIde2(e2);
+		
+		EncuentroEquipo ee = new EncuentroEquipo();
+		EncuentroEquipo ee2=new EncuentroEquipo();
+		ee.setIde(e2);
+		ee.setIdp(e);
+		
+		ee2.setIde(e1);
+		ee2.setIdp(e);
 
 		eventsDAO se = new eventsDAO();
 
 		boolean verdad = se.insertObject(e);
+		boolean falso = se.insertEventTeam(ee);
+		boolean pos=se.insertEventTeam(ee2);
+		
 
-		if (verdad) {
+		if (verdad || falso || pos) {
 			return "Encuentro registrado correctamente";
 		} else {
 			return "Encuentro registrado incorrectamente";
@@ -57,19 +70,28 @@ public class Eventsmanager {
 
 	}
 	
-	public String getEventsOfuser(Usuario u) {
+	public Encuentro[] getEventsOfuser(Usuario u) {
 
 	eventsDAO eu =new eventsDAO();
+	userDAO ud=new userDAO();
 	
 	List<EncuentroEquipo> ee=eu.getEventByTeam();
-		
+	List<UsuarioEquipo> ue= ud.GetUsuarioEquipo();
 	
+	int iot=ue.indexOf(u);
+	Equipo e=ue.get(iot).getIde();
+	Encuentro[] en=new Encuentro[ee.size()];
 	
-		
-		
-		
-		
-    return null;
+		for (int i = 0; i < ee.size(); i++) {
+			
+			if (ee.get(i).getIde() == e) {
+				
+			en[i]=ee.get(i).getIdp();
+				
+			}
+			
+		}
+    return en;
 	}
 
 }
