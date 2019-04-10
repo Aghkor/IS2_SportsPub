@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author PERSONAL
  */
-@WebServlet(name = "Servletperfil_eq8", urlPatterns = {"/Servletperfil_eq8"})
-public class Servletperfil_eq8 extends HttpServlet {
+@WebServlet(name = "Servletperfil_eq5", urlPatterns = {"/Servletperfil_eq5"})
+public class Servletperfil_eq5 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -60,8 +60,8 @@ public class Servletperfil_eq8 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        
+         processRequest(request, response);
+         
         String usuario =  "cehd1317" ;//request.getParameter("user"); 
         String nombreequipo =  "Niupi" ;//request.getParameter("user");
         String liderequipo = "camilo" ;//request.getParameter("nombre");
@@ -72,20 +72,18 @@ public class Servletperfil_eq8 extends HttpServlet {
         String jug2 = "Benji";//request.getParameter("edad");
         String jug3 ="Kagawa";// request.getParameter("genero");    
         String jug4 = "Arango"; //request.getParameter("eqfut_5");
-        String jug5 = "Hola";       //request.getParameter("eqfut_8");
-        String jug6 = "df";
-        String jug7 = "fdsfdsf";
-        String jug8 = "holi";        
+        String jug5 = null; //request.getParameter("eqfut_8");
+        
         String JSON = "{\"equipo\": {\"nombre\":\"" + nombreequipo + "\",\"lider\":\""+ liderequipo + "\",\"genero\":\"" + generoequipo+ "\",\"numero\":\""
-                + numjugadores + "\",\"j1\":\"" + jug1 + "\",\"j2\":\"" + jug2 + "\",\"j3\":\"" + jug3 + "\",\"j4\":\"" + jug4 + "\",\"j5 \":\"" + jug5
-                + "\",\"j6 \":\""+jug6+ "\",\"j7 \":\""+ jug7+"\",\"j8\":\""+jug8+"\"}}" ;
+                + numjugadores + "\",\"j1\":\"" + jug1 + "\",\"j2\":\"" + jug2 + "\",\"j3\":\"" + jug3 + "\",\"j4\":\"" + jug4 + "\",\"j5 \":\"" + jug5 + "\"}}" ;
          response.setContentType("text/html;charset=UTF-8");
          
          try (PrintWriter out = response.getWriter()) {
              out.print(JSON);
             
-        }
-        
+        } 
+         
+         
     }
 
    

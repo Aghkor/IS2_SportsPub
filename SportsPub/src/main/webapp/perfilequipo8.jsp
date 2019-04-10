@@ -182,6 +182,7 @@
                           </div>
                           </form>
                         <a class="btn btn-theme btn-block " href="config_eq8" type="button">Configurar equipo 8 </a>
+                         <button class="btn btn-theme  " type="button" id="MostrarDatos" >Mostrar Datos</button>
 		            <hr>
                           </div>
                            
@@ -198,15 +199,15 @@
                               <div class="form-group ">
                                   <label class="col-sm-2 control-label col-lg-2" >Integrante 1 </label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="jug1" disabled>
-									  </br>
+                                      <output type="text" class="form-control" id="juga1" disabled></output>
+									
 				
                                   </div>
                               </div>
                               <div class="form-group">
                                   <label class="col-sm-2 control-label col-lg-2" >Integrante 2</label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="jug2" disabled>
+                                      <output type="text" class="form-control" id="juga2" disabled></output>
 									  </br>
 				
                                   </div>
@@ -222,7 +223,7 @@
 				  <div class="form-group ">
                                   <label class="col-sm-2 control-label col-lg-2" >Integrante 4 </label>
                                   <div class="col-lg-10">
-                                      <output type="text" class="form-control" id="juga4" disabled></output>
+                                   <output type="text" class="form-control" id="juga4" disabled></output>
 									  </br>
 				  
                                   </div>
@@ -281,6 +282,56 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
+     <script>
+          document.getElementById("MostrarDatos").addEventListener("click",function(){
+            $.post("Servletperfil_eq8",$(document.forms[0]),function(response){
+                
+                var nombre = document.getElementById("nombreequipo");
+                var usuarioen = document.getElementById("usuario_encabezado");
+                var lider = document.getElementById("lider_equipo");
+                var genero1 = document.getElementById("genero");
+                var numerojug = document.getElementById("nuemero_jugadores");
+                var juga1= document.getElementById("juga1");
+                var juga2 = document.getElementById("juga2");
+                var juga3 = document.getElementById("juga3");   
+                var juga4 = document.getElementById("juga4");
+                var juga5 = document.getElementById("juga5");
+                var juga6 = document.getElementById("juga6");
+                var juga7 = document.getElementById("juga7");
+                var juga8 = document.getElementById("juga8");                
+                var datos = JSON.parse(response);         
+                console.log(datos.equipo);
+                console.log(datos.equipo.jug8);
+                console.log(datos.equipo.jug1);
+                
+                usuarioen.innerHTML += datos.equipo.usuario;
+                nombre.innerHTML += datos.equipo.nombre;
+                lider.innerHTML += datos.equipo.lider;
+                genero1.innerHTML += datos.equipo.genero;
+                numerojug.innerHTML += datos.equipo.numero;
+                juga1.innerHTML += datos.equipo.j1;
+                juga2.innerHTML += datos.equipo.j2;
+                juga3.innerHTML += datos.equipo.j3;
+                juga4.innerHTML += datos.equipo.j4;
+                juga5.innerHTML += datos.equipo.j5;
+                juga6.innerHTML += datos.equipo.j6;
+                juga7.innerHTML += datos.equipo.j7;
+                juga8.innerHTML += datos.equipo.j8;
+         
+              
+                
+                
+                
+            });    
+        },false);
+              
+              
+              
+              
+              
+          </script>
+    
+    
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>

@@ -1,3 +1,10 @@
+<%-- 
+    Document   : crear_eqfut5
+    Created on : 2/04/2019, 12:19:56 PM
+    Author     : PERSONAL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +14,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Perfil equipo 8 - SportsPub</title>
+    <title>Perfil equipo 5 - SportsPub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -20,11 +27,7 @@
 
     <link href="assets/css/table-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    
   </head>
 
   <body>
@@ -40,7 +43,7 @@
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.html">Logout</a></li>
+                    <li><a class="logout" href="incio.html">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -55,7 +58,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="index.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -64,7 +67,7 @@
                           <span>Muro</span>
                       </a>
 					  <ul class="sub">
-					      <li><a  href="principal.html">Inicio</a></li>  
+			    <li><a  href="principal.html">Inicio</a></li>  
                           <li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
                       </ul>
                   </li>
@@ -75,8 +78,8 @@
                           <span>Equipo de futbol</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
-						  <li class="active"><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
+                          <li class="active"><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
+						  <li><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>
@@ -88,8 +91,9 @@
                       </a>
                       <ul class="sub">
                           
-                          <li><a  href="busq_jug.html">Buscar jugadores </a></li>
+                         <li><a  href="busq_jug.html">Buscar jugadores </a></li>
                           <li><a  href="busq_equipo.html">Buscar equipos</a></li>
+                          <li><a  href="disp.html">Disponibilidad</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -98,7 +102,7 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.html">Perfil Usuario</a></li>
+                          <li><a  href="index.html">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
 						  <li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
                       </ul>
@@ -127,7 +131,7 @@
     
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Creacion de equipo Futbol 8</h3>
+          	<h3><i class="fa fa-angle-right"></i> Creacion de equipo Futbol 5</h3>
           	
           	<!-- DATOS GENERALES DEL EQUIPO 1 -->
           	<div class="row mt">
@@ -141,14 +145,13 @@
                                   <input type="text" class="form-control" id="nombreequipo_1" type="text" >
                               </div>
                           </div>
-                          
-                          <div class="form-group">
+						  <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Lider del equipo </label>
                               <div class="col-sm-10">
                                   <input type="text" class="form-control" id="lider_equipo" type="text" >
                               </div>
                           </div>
-						   <div class="form-group">
+                          <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Tipo de futbol </label>
                               <div class="col-sm-10">
                                   <select class="form-control" id="tipo_futbol" >
@@ -158,7 +161,7 @@
                                        </select>
                               </div>
                           </div>
-						   <div class="form-group">
+						  <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
                               <div class="col-sm-10">
                                        <select class="form-control" id="genero" >
@@ -169,7 +172,7 @@
                               </div>
                           </div>
 						  
-						  <div class="form-group">
+                          <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Ingresar escudo </label>
                               <div class="col-sm-10">
                                   <input name="file" type="file"   id="escudo"><br/>
@@ -185,9 +188,6 @@
 						  <option>3</option>
 						  <option>4</option>
 						  <option>5</option>
-						  <option>6</option>
-						  <option>7</option>
-						  <option>8</option>
 						
 						 
 						</select>
@@ -227,27 +227,10 @@
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
                                   </div>
                               </div>
-							   <div class="form-group ">
-                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 6 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5_1" disabled>
-                                  </div>
-                              </div>
-							   <div class="form-group ">
-                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 7 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5_1" disabled>
-                                  </div>
-                              </div>
-							   <div class="form-group ">
-                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 8 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol5_1" disabled>
-                                  </div>
-                              </div>
+							  
 						 
 						  
-                        <a class="btn btn-theme  " href="config_eq5.html">Creacion del equipo futbol 8</a>
+                        <a class="btn btn-theme btn-block" href="config_eq5.html">Creacion del equipo futbol 5</a>
 		            <hr>
                           </div>
                       </form>

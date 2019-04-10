@@ -70,8 +70,7 @@ public class Servletuser extends HttpServlet {
 		String Celular=request.getParameter("celular");
 	
 		Usermanager ur=new Usermanager();
-		String gson=ur.insertUser(Nombre,Apellido,Correo,contrasena,Edad,User,Genero,Celular);
-		
+		String gson=ur.insertUser(Nombre,Apellido,Correo,contrasena,Edad,User,Genero,Celular);		
 		out.println(gson);
 	}
 

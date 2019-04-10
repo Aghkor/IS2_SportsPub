@@ -1,3 +1,10 @@
+<%-- 
+    Document   : crear_eqfut8
+    Created on : 2/04/2019, 12:20:59 PM
+    Author     : PERSONAL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +14,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>PERFIL EQUIPO 8 - SportsPub</title>
+    <title>Perfil equipo 8 - SportsPub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -35,9 +42,12 @@
       *********************************************************************************************************************************************************** -->
        <!--header start-->
       <header class="header black-bg">
+	  <!--logo start-->
+            <a href="principal.html" class="logo"><b>SportsPub</b></a>
+            <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.html">Logout</a></li>
+                    <li><a class="logout" href="incio.html">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -47,12 +57,12 @@
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
-      <aside>
+     <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="index.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -73,7 +83,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
-						  <li><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
+			 <li class="active"><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>
@@ -85,8 +95,9 @@
                       </a>
                       <ul class="sub">
                           
-                        <li><a  href="busq_jug.html">Buscar jugadores </a></li>
+                          <li><a  href="busq_jug.html">Buscar jugadores </a></li>
                           <li><a  href="busq_equipo.html">Buscar equipos</a></li>
+                          <li><a  href="disp.html">Disponibilidad</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -95,9 +106,9 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.html">Perfil Usuario</a></li>
+                          <li><a  href="index.html">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
-						  <li class="active"><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
+						  <li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -124,58 +135,59 @@
     
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Perfil Futbol 8</h3>
+          	<h3><i class="fa fa-angle-right"></i> Creacion de equipo Futbol 8</h3>
           	
           	<!-- DATOS GENERALES DEL EQUIPO 1 -->
           	<div class="row mt">
-          		<div class="col-lg-12" id="contendor">
+          		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales Equipo </h4>
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos del  Equipo 1 </h4>
                       <form class="form-horizontal style-form" method="get">
-					  
-					  <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Escudo del equipo</label>
-                              <div class="col-sm-10">
-                                 <p><img src="assets/img/ui-zac.jpg" class="img-circle" width="80" id="escudo"></p>
-                              </div>
-                          </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="nombreequipo_1" type="text" disabled>
+                                  <input type="text" class="form-control" id="nombreequipo_1" type="text" >
                               </div>
-                          </div>                         
+                          </div>
+                          
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Lider del equipo </label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="lider_equipo" type="text" disabled>
+                                  <input type="text" class="form-control" id="lider_equipo" type="text" >
                               </div>
                           </div>
-                          <div class="form-group">
+						   <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Tipo de futbol </label>
                               <div class="col-sm-10">
-                                  <select class="form-control" id="tipo_futbol"  disabled>
+                                  <select class="form-control" id="tipo_futbol" >
                                         <option value="bog">5</option>
                                         <option value="med">8</option>
                                        
                                        </select>
                               </div>
                           </div>
-						  <div class="form-group">
+						   <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
                               <div class="col-sm-10">
-                                       <select class="form-control" id="genero" disabled >
+                                       <select class="form-control" id="genero" >
                                         <option value="bog">Masculino</option>
                                         <option value="med">Femenino</option>
 										<option value="med">Mixto</option>
                                         </select>
                               </div>
                           </div>
+						  
+						  <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Ingresar escudo </label>
+                              <div class="col-sm-10">
+                                  <input name="file" type="file"   id="escudo"><br/>
+                              </div>
+                          </div>
 
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Numero de jugadores</label>
                               <div class="col-sm-10">
-                             <select class="form-control" id="num_jugadores" disabled>
+                                          <select class="form-control" id="num_jugadores">
 						  <option>1</option>
 						  <option>2</option>
 						  <option>3</option>
@@ -184,92 +196,73 @@
 						  <option>6</option>
 						  <option>7</option>
 						  <option>8</option>
-						  
 						
 						 
 						</select>
                               </div>
                           </div>
-                        <a class="btn btn-theme btn-block  " href="config_eq8.html">Configuracion del equipo futbol 5</a>
+						   
+						  
+						  <h4 class="mb"><i class="fa fa-angle-right"></i> INTEGRANTES  FUTBOL 5 </h4>
+						  
+						  <div class="form-group ">
+                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 1 </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
+                                  </div>
+                              </div>
+						    <div class="form-group ">
+                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 2 </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
+                                  </div>
+                              </div>
+							    <div class="form-group ">
+                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 3 </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
+                                  </div>
+                              </div>
+							    <div class="form-group ">
+                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 4 </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
+                                  </div>
+                              </div>
+							    <div class="form-group ">
+                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 5 </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
+                                  </div>
+                              </div>
+							   <div class="form-group ">
+                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 6 </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
+                                  </div>
+                              </div>
+							   <div class="form-group ">
+                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 7 </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
+                                  </div>
+                              </div>
+							   <div class="form-group ">
+                                  <label class="col-sm-2 col-sm-2 control-label" >Integrante 8 </label>
+                                  <div class="col-lg-10">
+                                      <input type="text" class="form-control" id="futbol5_1" disabled>
+                                  </div>
+                              </div>
+						 
+						  
+                        <a class="btn btn-theme  " href="config_eq5.html">Creacion del equipo futbol 8</a>
 		            <hr>
                           </div>
                       </form>
                   </div>
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
-				<!-- INTEGRANTES -->
-          	<div class="row mt">
-          		<div class="col-lg-12" id="contenedor2">
-          			<div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> INTEGRANTES  FUTBOL 8 </h4>
-                          <form class="form-horizontal tasi-form" method="get">
-                              <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 1 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8_1" disabled>
-                                  </div>
-                              </div>
-                              <div class="form-group">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 2</label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8_2" disabled>
-                                  </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 3 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8_3" disabled>
-                                  </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 4 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8_4" disabled>
-                                  </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 5 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8_5" disabled>
-                                  </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 6 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8_6" disabled>
-                                  </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 7 </label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8_7" disabled>
-                                  </div>
-                              </div>
-							  <div class="form-group ">
-                                  <label class="col-sm-2 control-label col-lg-2" >Integrante 8</label>
-                                  <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="futbol8_8" disabled>
-                                  </div>
-                              </div>
-							  
-                              
-
-							
-		            <hr>
-                          </form>
-          			</div><!-- /form-panel -->
-          		</div><!-- /col-lg-12 -->
-          	</div><!-- /row -->
-			
-				
-							  
-                              
-
-		            <hr>
-                          </form>
-          			</div><!-- /form-panel -->
-          		</div><!-- /col-lg-12 -->
-          	</div><!-- /row -->
+	<!-- /row -->
 			
 			
 			
@@ -280,9 +273,6 @@
      
       <!--footer end-->
   </section>
-          
-           <!-- AJAX DEL PERFIL.HTML-->
-     <script src="perfilequipo8_jvs.js"></script>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>

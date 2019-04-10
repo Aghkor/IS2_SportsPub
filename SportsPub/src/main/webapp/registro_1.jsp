@@ -1,0 +1,146 @@
+<%-- 
+    Document   : newjsp
+    Created on : 2/04/2019, 12:34:25 PM
+    Author     : PERSONAL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Registro - SportsPub</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+   
+  </head>
+
+  <body>
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+
+	  <div id="login-page">
+	  	<div class="container">
+	  	
+		      <form class="form-login" action="index.html">
+		        <h2 class="form-login-heading">Registro de SportsPub</h2>
+		        <div class="login-wrap">
+				    <h5 class="form-login-heading">Nombre</h5>
+		            <input type="text" class="form-control" placeholder="Nombre"  id="nombre"autofocus>
+		            <br>
+					<h5 class="form-login-heading">Apellidos</h5>
+		            <input type="text" class="form-control" placeholder="Apellidos" id="apellido"autofocus>
+					<br>
+					<h5 class="form-login-heading">Correo electronico </h5>
+		            <input type="text" class="form-control" placeholder="Email"  id="email"autofocus>
+					<br>
+					<h5 class="form-login-heading">Contraseña </h5>
+		            <input  type="text" class="form-control" placeholder="Contraseña" id="contrasena" autofocus>
+					<br>
+					<h5 class="form-login-heading">Usuario </h5>
+		            <input  type="text" class="form-control" placeholder="Usuario" id="usuario" autofocus>
+					<br>
+					<h5 class="form-login-heading">Celular</h5>
+		            <input  type="text" class="form-control" placeholder="Celular" id="celular" autofocus>
+					<br>
+					<label class="checkbox"> 
+					<h5 class="form-login-heading">Seleccione tu genero</h5>
+					                    <select class="form-control" id="genero" >
+                                        <option value="bog">Masculino</option>
+                                        <option value="med">Femenino</option>
+                                        
+										 </select>
+                    </label>
+					
+				     <h5 class="form-login-heading">Edad </h5>
+		           <select class="form-control" id="edad">
+						  <option>17</option>
+						  <option>18</option>
+						  <option>19</option>
+						  <option>20</option>
+						  <option>21</option>
+						  <option>22</option>
+						  <option>23</option>
+						  <option>24</option>
+						  <option>25</option>
+						  <option>26</option>
+						  <option>27</option>
+						  <option>28</option>
+						  <option>29</option>
+						  <option>30</option>
+						  <option>31</option>
+						  <option>32</option>
+						  <option>33</option>
+						  <option>34</option>
+						  <option>35</option>
+						  <option>36</option>
+						  <option>37</option>
+						  <option>38</option>
+						  <option>39</option>
+						  <option>40</option>
+						 
+						</select>
+						</br>
+						
+						<h5 class="form-login-heading"> Valorizacion</h5>
+						  <label for="radio1">1</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">2</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">3</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">4</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">5</label>
+		             
+		            <button class="btn btn-theme btn-block"  type="submit" id="guardar_registro"> Registrarme a SportsPub </button>
+		            <hr>	
+		            
+		            
+		           
+		        </div>
+		
+		          <!-- Modal -->
+		          
+		          <!-- modal -->
+				  
+				  
+				  
+				  
+				  
+		
+		      </form>	  	
+	  	
+	  	</div>
+	  </div>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!--BACKSTRETCH-->
+    <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+    <script type="text/javascript" src="assets/js/jquery.backstretch.min.js"></script>
+    <script>
+        $.backstretch("assets/img/fondopri.jpg", {speed: 500});
+    </script>
+
+
+  </body>
+</html>

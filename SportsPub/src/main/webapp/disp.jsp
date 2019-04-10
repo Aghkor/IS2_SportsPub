@@ -14,7 +14,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Inicio - SportsPub</title>
+    <title>Disponibilidad Jugadores - SportsPub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -76,7 +76,8 @@
 					  <ul class="sub">
 					      <a  href="principal.jsp">Inicio</a></li> 
 						  
-                          <li><a  href="pub_evento.jsp">Publicar evento nuevo</a></li>                          
+                          <li><a  href="pub_evento.jsp">Publicar evento nuevo</a></li>
+                           
                       </ul>
                   </li>
 
@@ -87,7 +88,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="crear_eqfut.jsp">Crear equipo de futbol 5</a></li>
-						  <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
+			 <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>

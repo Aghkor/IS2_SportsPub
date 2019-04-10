@@ -1,3 +1,10 @@
+<%-- 
+    Document   : busq_jug
+    Created on : 2/04/2019, 12:14:38 PM
+    Author     : PERSONAL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +14,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Detalles evento - SportsPub</title>
+    <title>Buscar jugador - SportsPub</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -40,7 +47,7 @@
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.html">Logout</a></li>
+                    <li><a class="logout" href="principal.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -55,7 +62,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="principal.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -64,9 +71,9 @@
                           <span>Muro</span>
                       </a>
 					  <ul class="sub">
-					      <li><a  href="principal.html">Inicio</a></li>  
-						  <li class="active"><a  href="detalles_evento.html">Detalles evento</a></li> 
-                          <li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
+					      <li><a  href="principal.jsp">Inicio</a></li>  
+						       
+                          <li><a  href="pub_evento.jsp">Publicar evento nuevo</a></li>                          
                       </ul>
                   </li>
 
@@ -76,8 +83,8 @@
                           <span>Equipo de futbol</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
-						  <li><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
+                          <li><a  href="crear_eqfut5.jsp">Crear equipo de futbol 5</a></li>
+						  <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>
@@ -89,8 +96,9 @@
                       </a>
                       <ul class="sub">
                           
-                          <li><a  href="busq_jug.html">Buscar jugadores </a></li>
-                          <li><a  href="busq_equipo.html">Buscar equipos</a></li>
+                          <li class="active"><a  href="busq_jug.jsp">Buscar jugadores </a></li>
+                          <li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
+                          <li><a  href="disp.jsp">Disponibilidad</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -99,9 +107,9 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.html">Perfil Usuario</a></li>
-                          <li><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
-						  <li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
+                          <li><a  href="index.jsp">Perfil Usuario</a></li>
+                          <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
+						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -110,15 +118,16 @@
                           <span>Configuracion </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="config_perfilusuario.html">Configurar perfil </a></li>
-						  <li><a  href="config_eq5.html">configurar equipo futbol 5 </a></li>
-						  <li><a  href="config_eq8.html">configurar equipo futbol 8 </a></li>
+                          <li><a  href="config_perfilusuario.jsp">Configurar perfil </a></li>
+						  <li><a  href="config_eq5.jsp">configurar equipo futbol 5 </a></li>
+						  <li><a  href="config_eq8.jsp">configurar equipo futbol 8 </a></li>
                       </ul>
                   </li>
                 </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
+      <!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -126,168 +135,177 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Evento futbol </h3>
+          	<h3><i class="fa fa-angle-right"></i> Buscar perfil del jugador</h3>
           	
           	<!-- DATOS GENERALES -->
           	<div class="row mt">
           		<div class="col-lg-12">
-                  <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales del evento  </h4>
-                      <form class="form-horizontal style-form" method="get">
-					   <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Lider del equipo</label>
+                  <section class="form-panel">
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
+                      <form class="form-horizontal style-form" method="post">
+                          <section class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="lider_equipo" type="text" disabled>
+                                  <input type="text" class="form-control" id="usuario" type="text" >
                               </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Nombre del equipo</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="nombre_equipo" type="text" disabled>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Ubicacion </label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="ubicacion" type="text" disabled>
-                               </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Tipo de futbol </label>
-                              <div class="col-sm-10">
-                                 <select class="form-control" id="tipo_futbol" disabled >
-                                        <option value="bog">Futbol 5</option>
-                                        <option value="med">Futbol 8</option>
-                                         </select>
-                              </div>
-                          </div>
-						  <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Tiempo de espera </label>
-                              <div class="col-sm-10">
-                                  <select class="form-control" id="tiempo_espera" disabled>
-						  <option>10 minutos</option>
-						  <option>20 minutos</option>
-						  <option>30 minutos</option>
-						  <option>40 minutos</option>
-						  <option>50 minutos</option>
-						  <option>60 minutos</option>
-						  </select>
-						  
-                              </div>
-                          </div>
-						  
-						  
-						  <h4 class="mb"><i class="fa fa-angle-right"></i> Se solicita </h4>
+                          </section>              
 
-                          
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Numero de jugadores</label>
-                              <div class="col-sm-10">
-                                  <input type="text"  class="form-control" id ="num_jugadores"  disabled>
-                              </div>
+                              <label class="col-sm-2 col-sm-2 control-label">Edad</label>
+                              <section class="col-sm-10">
+                                  <select class="form-control" id="edad">
+						  <option>17</option>
+						  <option>18</option>
+						  <option>19</option>
+						  <option>20</option>
+						  <option>21</option>
+						  <option>22</option>
+						  <option>23</option>
+						  <option>24</option>
+						  <option>25</option>
+						  <option>26</option>
+						  <option>27</option>
+						  <option>28</option>
+						  <option>29</option>
+						  <option>30</option>
+						  <option>31</option>
+						  <option>32</option>
+						  <option>33</option>
+						  <option>34</option>
+						  <option>35</option>
+						  <option>36</option>
+						  <option>37</option>
+						  <option>38</option>
+						  <option>39</option>
+						  <option>40</option>
+						 
+						</select>
+                              </section>
                           </div>
-						  <div class="form-group">
+                          <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
-                              <div class="col-sm-10">
-                                  <select class="form-control" id="genero" disabled>
-                                        <option value="bog">Masculino</option>
-                                        <option value="med">Femenino</option> 
-										 <option value="med">Mixto</option> 
-										 </select>
-                              </div>
-                          </div>
-						  <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Edad maxima</label>
-                              <div class="col-sm-10">
-							   <select class="form-control" id="edad_max" disabled>
-						  <option>17</option>
-						  <option>18</option>
-						  <option>19</option>
-						  <option>20</option>
-						  <option>21</option>
-						  <option>22</option>
-						  <option>23</option>
-						  <option>24</option>
-						  <option>25</option>
-						  <option>26</option>
-						  <option>27</option>
-						  <option>28</option>
-						  <option>29</option>
-						  <option>30</option>
-						  <option>31</option>
-						  <option>32</option>
-						  <option>33</option>
-						  <option>34</option>
-						  <option>35</option>
-						  <option>36</option>
-						  <option>37</option>
-						  <option>38</option>
-						  <option>39</option>
-						  <option>40</option>
-						 
-						</select>
-
-                              </div>
+                              <section class="col-sm-10">
+                                       <select class="form-control" id="genero" >
+                                        <option >Masculino</option>
+                                        <option >Femenino</option>
+                                        </select>
+                              </section>
                           </div>
 						  
-						   <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Edad minima</label>
-                              <div class="col-sm-10">
-							   <select class="form-control" id="edad_max" disabled>
-						  <option>17</option>
-						  <option>18</option>
-						  <option>19</option>
-						  <option>20</option>
-						  <option>21</option>
-						  <option>22</option>
-						  <option>23</option>
-						  <option>24</option>
-						  <option>25</option>
-						  <option>26</option>
-						  <option>27</option>
-						  <option>28</option>
-						  <option>29</option>
-						  <option>30</option>
-						  <option>31</option>
-						  <option>32</option>
-						  <option>33</option>
-						  <option>34</option>
-						  <option>35</option>
-						  <option>36</option>
-						  <option>37</option>
-						  <option>38</option>
-						  <option>39</option>
-						  <option>40</option>
-						 
-						</select>
-
-                              </div>
-                          </div>
-						  
-						  
-
-  						  
-						  
-						 <a class="btn btn-theme btn-block  " href="principal.html">Aceptar evento</a>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">valorizacion</label>
+                              <section class="col-sm-10">
+                                   <label for="radio1">1</label>
+                              <input id="radio2" type="radio" name="estrellas" value="4">
+                              <label for="radio2">2</label>
+                              <input id="radio3" type="radio" name="estrellas" value="3">
+                              <label for="radio3">3</label>
+                              <input id="radio4" type="radio" name="estrellas" value="2">
+                              <label for="radio4">4</label>
+                              <input id="radio5" type="radio" name="estrellas" value="1">
+                              <label for="radio5">5</label>
+                              </section>
+                          </div>						  
+						 <a class="btn btn-theme btn-block" >Buscar jugador</a>
 		          
 				  <hr>
-                          </div>
+                          </section>
                       </form>
                   </div>
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
           	
           	          	
-          	<!-- DATOS DE SUS EQUIPOS -->
-          
-			
-			         	<!-- DATOS DE SUS EQUIPOS -->
+          <!-- /row -->
           	
           	<!-- INPUT MESSAGES -->
           
           		
           	<!-- CUSTOM TOGGLES -->
-          		<!-- /row -->
+          		<div class="row mt">
+                      <!-- SERVER STATUS PANELS -->
+                      	<div class="col-md-4 col-sm-4 mb">
+							<!-- WHITE PANEL - TOP USER -->
+							<div class="white-panel pn">
+								<div class="white-header">
+									<h5>Jugador</h5>
+								</div>
+								
+								<p><b></b></p>
+								<div class="row">
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION </p>
+										<p class="small mt">Nombre</p>
+										<p class="small mt">Apellido</p>
+									</div>
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION</p>
+										<p class="small mt">Edad</p>
+										<p class="small mt">Genero</p>
+
+									</div>
+									
+								</div>
+								<button class="btn btn-theme " href="index.html">Contactar jugador</button>
+							</div>
+						</div>
+                      	
+
+                      	<div class="col-md-4 col-sm-4 mb">
+							<!-- WHITE PANEL - TOP USER -->
+							<div class="white-panel pn">
+								<div class="white-header">
+									<h5>Jugador</h5>
+								</div>
+								
+								<p><b></b></p>
+								<div class="row">
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION </p>
+										<p class="small mt>Nombre</p>
+										<p class="small mt>Equipo</p>
+									</div>
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION</p>
+										<p class="small mt>Edad</p>
+										<p class="small mt>Genero</p>
+
+									</div>
+									
+								</div>
+								<a class="btn btn-theme " href="index.html">Contactar Jugador</a>
+							</div>
+						</div><!-- /col-md-4 -->
+                      	
+						<div class="col-md-4 col-sm-4 mb">
+							<!-- WHITE PANEL - TOP USER -->
+							<div class="white-panel pn">
+								<div class="white-header">
+									<h5>Jugador</h5>
+								</div>
+								
+								<p><b></b></p>
+								<div class="row">
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION </p>
+										<p class="small mt">Nombre</p>
+										<p class="small mt">Apellido</p>
+									</div>
+									<div class="col-md-6">
+										<p class="small mt">INFORMACION</p>
+										<p class="small mt">Edad</p>
+										<p class="small mt">Genero</p>
+
+									</div>
+									
+								</div>
+								<a class="btn btn-theme" href="index.html">Contactar Jugador</a>
+							</div>
+						</div>><!-- /col-md-4 -->
+                      	
+
+                    </div><!-- /row -->
+          	</div><!-- /row -->
           	
           	
 		</section><! --/wrapper -->
