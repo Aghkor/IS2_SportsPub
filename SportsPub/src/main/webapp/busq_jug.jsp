@@ -43,7 +43,7 @@
         <!--header start-->
       <header class="header black-bg">
 	  <!--logo start-->
-            <a href="principal.html" class="logo"><b>SportsPub</b></a>
+            <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
@@ -109,7 +109,7 @@
                       <ul class="sub">
                           <li><a  href="index.jsp">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
-						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
+			  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -246,7 +246,7 @@
 									</div>
 									
 								</div>
-								<button class="btn btn-theme " href="index.html">Contactar jugador</button>
+								<button class="btn btn-theme " href="index.jsp">Contactar jugador</button>
 							</div>
 						</div>
                       	
@@ -273,7 +273,7 @@
 									</div>
 									
 								</div>
-								<a class="btn btn-theme " href="index.html">Contactar Jugador</a>
+								<a class="btn btn-theme " href="">Contactar Jugador</a>
 							</div>
 						</div><!-- /col-md-4 -->
                       	
@@ -299,7 +299,7 @@
 									</div>
 									
 								</div>
-								<a class="btn btn-theme" href="index.html">Contactar Jugador</a>
+								<a class="btn btn-theme" href="">Contactar Jugador</a>
 							</div>
 						</div>><!-- /col-md-4 -->
                       	

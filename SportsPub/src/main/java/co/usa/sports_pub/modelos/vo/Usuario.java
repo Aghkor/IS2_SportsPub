@@ -6,7 +6,9 @@
 package co.usa.sports_pub.modelos.vo;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,10 +16,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -38,6 +42,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 	, @NamedQuery(name = "Usuario.findByUsuario", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario")
 	, @NamedQuery(name = "Usuario.findByContrasena", query = "SELECT u FROM Usuario u WHERE u.contrasena = :contrasena")})
 public class Usuario implements Serializable {
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idu")
+	private Collection<EncuentroUsuario> encuentroUsuarioCollection;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idu")
+	private Collection<ComentarioUsuario> comentarioUsuarioCollection;
+	@OneToMany(mappedBy = "idu")
+	private Collection<UsuarioEquipo> usuarioEquipoCollection;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idu")
+	private Collection<Valorizacionjugador> valorizacionjugadorCollection;
+
+    @Size(max = 2)
+    @Column(name = "disponibilidad")
+    private String disponibilidad;
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -200,6 +218,50 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		return "co.usa.sports_pub.modelos.vo.Usuario[ idu=" + idu + " ]";
+	}
+
+    public String getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(String disponibilidad) {
+        this.disponibilidad = disponibilidad;
+    }
+
+	@XmlTransient
+	public Collection<ComentarioUsuario> getComentarioUsuarioCollection() {
+		return comentarioUsuarioCollection;
+	}
+
+	public void setComentarioUsuarioCollection(Collection<ComentarioUsuario> comentarioUsuarioCollection) {
+		this.comentarioUsuarioCollection = comentarioUsuarioCollection;
+	}
+
+	@XmlTransient
+	public Collection<UsuarioEquipo> getUsuarioEquipoCollection() {
+		return usuarioEquipoCollection;
+	}
+
+	public void setUsuarioEquipoCollection(Collection<UsuarioEquipo> usuarioEquipoCollection) {
+		this.usuarioEquipoCollection = usuarioEquipoCollection;
+	}
+
+	@XmlTransient
+	public Collection<Valorizacionjugador> getValorizacionjugadorCollection() {
+		return valorizacionjugadorCollection;
+	}
+
+	public void setValorizacionjugadorCollection(Collection<Valorizacionjugador> valorizacionjugadorCollection) {
+		this.valorizacionjugadorCollection = valorizacionjugadorCollection;
+	}
+
+	@XmlTransient
+	public Collection<EncuentroUsuario> getEncuentroUsuarioCollection() {
+		return encuentroUsuarioCollection;
+	}
+
+	public void setEncuentroUsuarioCollection(Collection<EncuentroUsuario> encuentroUsuarioCollection) {
+		this.encuentroUsuarioCollection = encuentroUsuarioCollection;
 	}
 	
 }

@@ -8,6 +8,22 @@
         <servlet-name>Servletlogin</servlet-name>
         <servlet-class>co.usa.sports_pub.controladores.servlets.Servletlogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Busquedas</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.Busquedas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>pagina_inicio</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.pagina_inicio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>publicacionEventos</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.publicacionEventos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletEvents</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.ServletEvents</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servletuser</servlet-name>
         <url-pattern>/Servletuser</url-pattern>
@@ -15,6 +31,22 @@
     <servlet-mapping>
         <servlet-name>Servletlogin</servlet-name>
         <url-pattern>/Servletlogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Busquedas</servlet-name>
+        <url-pattern>/Busquedas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>pagina_inicio</servlet-name>
+        <url-pattern>/pagina_inicio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>publicacionEventos</servlet-name>
+        <url-pattern>/publicacionEventos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletEvents</servlet-name>
+        <url-pattern>/ServletEvents</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

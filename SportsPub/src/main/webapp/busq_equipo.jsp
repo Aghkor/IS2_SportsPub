@@ -43,11 +43,11 @@
        <!--header start-->
       <header class="header black-bg">
 	  <!--logo start-->
-            <a href="principal.html" class="logo"><b>SportsPub</b></a>
+            <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="incio.html">Logout</a></li>
+                    <li><a class="logout" href="incio.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -159,8 +159,8 @@
                               <label class="col-sm-2 col-sm-2 control-label">Tipo de futbol </label>
                               <section class="col-sm-10">
                                   <select class="form-control" id="tipo_futbol" >
-                                        <option value="bog">5</option>
-                                        <option value="med">8</option>
+                                        <option value="5">5</option>
+                                        <option value="8">8</option>
                                        
                                        </select>
                               </section>
@@ -169,16 +169,16 @@
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
                               <section class="col-sm-10">
                                        <select class="form-control" id="genero" >
-                                        <option value="bog">Masculino</option>
-                                        <option value="med">Femenino</option>
-				         <option value="med">Mixto</option>
+                                        <option value="mas">Masculino</option>
+                                        <option value=fem>Femenino</option>
+				         <option value="mix">Mixto</option>
                                         </select>
                               </section>
                           </div>
 
                           
                                                  
-						 <a class="btn btn-theme  " href=>Buscar Equipo</a>
+						 <a class="btn btn-theme  " >Buscar Equipo</a>
 		          
 				  <hr>
                           </div>
@@ -218,7 +218,7 @@
 									</section>
 									
 								</div>
-								<button class="btn btn-theme " href=".html">Contactar al equipo</button>
+								<button class="btn btn-theme " href="">Contactar al equipo</button>
 							</div>
 						</div>
                       	
@@ -244,7 +244,7 @@
 									</section>
 									
 								</div>
-								<a class="btn btn-theme " href=".html">Contactar al equipo</a>
+								<a class="btn btn-theme " href="">Contactar al equipo</a>
 							</div>
 						</div><!-- /col-md-4 -->
                       	
@@ -268,7 +268,7 @@
 									</section>
 									
 								</div>
-								<button class="btn btn-theme " href=".html">Contactar al equipo</button>
+								<button class="btn btn-theme " href="">Contactar al equipo</button>
 								
 							</div>
 						</div>><!-- /col-md-4 -->

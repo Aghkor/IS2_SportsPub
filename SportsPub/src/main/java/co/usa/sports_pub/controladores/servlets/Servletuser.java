@@ -8,6 +8,8 @@ package co.usa.sports_pub.controladores.servlets;
 import co.usa.sports_pub.modelos.Usuriomanager.Usermanager;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -59,20 +61,17 @@ public class Servletuser extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PrintWriter out=response.getWriter();
-		String Nombre=request.getParameter("nombre");
-		String Apellido=request.getParameter("apellido");
-		String Edad=request.getParameter("edad");
-		String Correo=request.getParameter("email");
-		String Genero=request.getParameter("genero");
-		String contrasena=request.getParameter("contrasena");
-		String User=request.getParameter("user");
-		String Celular=request.getParameter("celular");
-	
+		
+	    PrintWriter writer=response.getWriter();
 		Usermanager ur=new Usermanager();
-		String gson=ur.insertUser(Nombre,Apellido,Correo,contrasena,Edad,User,Genero,Celular);		
-		out.println(gson);
-	}
+		String userJson=request.getParameter("userdata");
+		try {
+	      String msj=ur.insertUser(userJson);
+		   writer.print(msj);
+		} catch (ClassNotFoundException ex) {
+			Logger.getLogger(Servletuser.class.getName()).log(Level.SEVERE, null, ex);
+		}
+}
 
 	/**
 	 * Returns a short description of the servlet.

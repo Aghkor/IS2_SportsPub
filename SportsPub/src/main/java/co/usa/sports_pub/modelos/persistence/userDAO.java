@@ -6,6 +6,8 @@
 package co.usa.sports_pub.modelos.persistence;
 
 import co.usa.sports_pub.modelos.vo.Usuario;
+import co.usa.sports_pub.modelos.vo.UsuarioEquipo;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -64,5 +66,106 @@ public class userDAO {
 		}
 
 	}
+	public List<Usuario> getEmail(Usuario User) {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Usuario> query = (TypedQuery<Usuario>) en.createQuery(
+					"SELECT u FROM Usuario u WHERE u.email =:email", Usuario.class);
+  
+			query.setParameter("email",User.getEmail());
+			
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
+	public List<Usuario> getID(Usuario User) {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Usuario> query = (TypedQuery<Usuario>) en.createQuery(
+					"SELECT u FROM Usuario u WHERE u.usuario =:usuario", Usuario.class);
+  
+			query.setParameter("usuario",User.getUsuario());
+			
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
+        
+        public List<Usuario> disponibles() {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Usuario> query = (TypedQuery<Usuario>) en.createQuery(
+					"SELECT u FROM Usuario u WHERE u.disponibilidad =:si", Usuario.class);
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
+		public List<UsuarioEquipo> GetUsuarioEquipo() {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<UsuarioEquipo> query = (TypedQuery<UsuarioEquipo>) en.createQuery(
+					"SELECT u FROM UsuarioEquipo u", UsuarioEquipo.class);
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
+        
+       
 
 }
