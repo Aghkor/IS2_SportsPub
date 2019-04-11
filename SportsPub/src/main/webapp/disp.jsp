@@ -162,7 +162,8 @@
 									</div>					
 									
 								</div>
-								<button class="btn btn-theme " href="detalles_evento.html">Aceptar</button>
+                                                                <button class="btn btn-theme " id="MostrarDatos" >Datos</button>
+
 								<button class="btn btn-theme " href="detalles_evento.html">Cancelar</button>
 							</div>
 						</div>                     	
@@ -263,6 +264,31 @@
       <!--footer end-->
   </section>
 
+      <script>
+          
+              document.getElementById("MostrarDatos").addEventListener("click",function(){
+            $.post("Busquedas",$(document.forms[0]),function(response){
+                
+                var lienzo  = document.getElementById("lienzo");                
+                var datos = JSON.parse(response); 
+                
+                        console.log(datos.disp);   
+                        
+                  lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>" ;
+                  lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>";
+                  lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>";
+                  lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>";   
+         
+              
+                
+                
+                
+            });    
+        },false);         
+          
+          </script>
+      
+      
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>

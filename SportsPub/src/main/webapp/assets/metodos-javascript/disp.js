@@ -1,7 +1,21 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
+    document.getElementById("MostrarDatos").addEventListener("click",function(){
+            $.post("Busquedas",$(document.forms[0]),function(response){
+                
+                var lienzo  = document.getElementById("lienzo");                
+                var datos = JSON.parse(response); 
+                                       
+                  lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>" ;
+                  lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>";
+                  lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>";
+                  lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>";   
+         
+              
+                
+                
+                
+            });    
+        },false);         
+          
+          
+          
+          <button class="btn btn-theme " id="MostrarDatos" >Datos</button>

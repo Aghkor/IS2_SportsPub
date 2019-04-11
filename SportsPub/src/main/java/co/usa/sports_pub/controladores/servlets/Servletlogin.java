@@ -59,7 +59,7 @@ public class Servletlogin extends HttpServlet {
 		misession = request.getSession();
 		if (logout != null && misession.getAttribute("usuario") != null) {
 			misession.invalidate();
-			response.sendRedirect("/SportsPub/index.html");
+			response.sendRedirect("/SportsPub/index.jsp");
 		}
 
 	}

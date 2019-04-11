@@ -39,7 +39,7 @@
 			<!--header start-->
 			<header class="header black-bg">
 				<!--logo start-->
-				<a href="principal.html" class="logo"><b>SportsPub</b></a>
+				<a href="principal.jsp" class="logo"><b>SportsPub</b></a>
 				<!--logo end-->
 				<section class="top-menu">
 					<form class="nav pull-right top-nav" method="get" action="Servletlogin">
@@ -59,7 +59,7 @@
 					<ul class="sidebar-menu" id="nav-accordion">
 						<%String msg = (String) session.getAttribute("user");
 							if (msg == null) {
-								response.sendRedirect("index.html");
+								response.sendRedirect("index.jsp");
 							}
 						%>
 
@@ -101,6 +101,7 @@
 
 								<li><a  href="busq_jug.jsp">Buscar jugadores </a></li>
 								<li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
+                                                                <li><a  href="disp.jsp">disponibilidad</a></li>
 							</ul>
 						</li>
 						<li class="sub-menu">
@@ -272,4 +273,3 @@
 
 	</body>
 </html>
-
