@@ -59,7 +59,7 @@ public class Servletlogin extends HttpServlet {
 		misession = request.getSession();
 		if (logout != null && misession.getAttribute("usuario") != null) {
 			misession.invalidate();
-			response.sendRedirect("/SportsPub/index.html");
+			response.sendRedirect("/SportsPub/index.jsp");
 		}
 
 	}
@@ -94,8 +94,8 @@ public class Servletlogin extends HttpServlet {
 		String contrase = u.getContrasena();
 		if (contrasena.equals(contrase)) {
 			u.setContrasena(null);
-			String us = Utils.toJson(u);
-			misession.setAttribute("usuario", us);
+			
+			misession.setAttribute("usuario", u);
 			misession.setAttribute("user", u.getUsuario());
 //			writer.println(Utils.toJson(misession.getAttribute("usuario")));
 			//response.sendRedirect("/SportsPub/principal.jsp");
