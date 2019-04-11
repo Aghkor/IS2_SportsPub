@@ -1,3 +1,10 @@
+<%-- 
+    Document   : detalles_evento
+    Created on : 2/04/2019, 12:21:54 PM
+    Author     : PERSONAL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,7 +47,7 @@
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.jsp">Logout</a></li>
+                    <li><a class="logout" href="incio.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -55,7 +62,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="principal.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -77,7 +84,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="crear_eqfut5.jsp">Crear equipo de futbol 5</a></li>
-						  <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
+			 <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>
@@ -91,6 +98,7 @@
                           
                           <li><a  href="busq_jug.jsp">Buscar jugadores </a></li>
                           <li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
+                          <li><a  href="disp.jsp">Disponibilidad</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -99,7 +107,7 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.jsp">Perfil Usuario</a></li>
+                          <li><a  href="index.jsp">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
 						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
@@ -268,7 +276,7 @@
 
   						  
 						  
-						 <a class="btn btn-theme btn-block  " href="principal.jsp">Aceptar evento</a>
+						 <a class="btn btn-theme btn-block  " href="principal.html">Aceptar evento</a>
 		          
 				  <hr>
                           </div>

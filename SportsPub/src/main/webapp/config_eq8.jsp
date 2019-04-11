@@ -1,3 +1,10 @@
+<%-- 
+    Document   : config_eq8
+    Created on : 2/04/2019, 12:16:48 PM
+    Author     : PERSONAL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,16 +42,12 @@
       *********************************************************************************************************************************************************** -->
       <!--header start-->
       <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <!--logo start-->
 	  <!--logo start-->
             <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.jsp">Logout</a></li>
+                    <li><a class="logout" href="incio.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -59,7 +62,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="principa.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -80,7 +83,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="crear_eqfut5.jsp">Crear equipo de futbol 5</a></li>
-						  <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
+			  <li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
                                        
                       </ul>
                   </li>
@@ -94,6 +97,7 @@
                           
                           <li><a  href="busq_jug.jsp">Buscar jugadores </a></li>
                           <li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
+                          <li><a  href="disp.jsp">Disponibilidad</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -102,7 +106,7 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.jsp">Perfil Usuario</a></li>
+                          <li><a  href="index.jsp">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
 						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
@@ -199,7 +203,7 @@
 						</select>
                               </div>
                           </div>
-                        <a class="btn btn-theme btn-block " href="config_perfilusuario.jsp" type="s">Guardar cambios</a>
+                        <a class="btn btn-theme btn-block " href="config_perfilusuario.html" type="s">Guardar cambios</a>
 		            <hr>
                           </div>
                       </form>
@@ -217,7 +221,7 @@
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
 									  </br>
-									   <a class="btn btn-theme  btn-block " href="config_perfilusuario.jsp" type="s">Eliminar del equipo </a>  
+									   <a class="btn btn-theme  btn-block " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>  
                                   </div>
                               </div>
                               <div class="form-group">
@@ -225,7 +229,7 @@
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_2" disabled>
 									  </br>
-									   <a class="btn btn-theme  btn-block " href="config_perfilusuario.jsp" type="s">Eliminar del equipo </a>
+									   <a class="btn btn-theme  btn-block " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
                                   </div>
                               </div>
 							  <div class="form-group ">
@@ -233,7 +237,7 @@
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
 									  </br>
-									   <a class="btn btn-theme btn-block  " href="config_perfilusuario.jsp" type="s">Eliminar del equipo </a>
+									   <a class="btn btn-theme btn-block  " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
                                   </div>
                               </div>
 							  <div class="form-group ">
@@ -241,7 +245,7 @@
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
 									  </br>
-									   <a class="btn btn-theme btn-block  " href="config_perfilusuario.jsp" type="s">Eliminar del equipo </a>
+									   <a class="btn btn-theme btn-block  " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
                                   </div>
                               </div>
 							  <div class="form-group ">
@@ -249,7 +253,7 @@
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
 									  </br>
-									   <a class="btn btn-theme btn-block " href="config_perfilusuario.jsp" type="s">Eliminar del equipo </a>
+									   <a class="btn btn-theme btn-block " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
                                   </div>
                               </div>
 							   <div class="form-group ">
@@ -257,7 +261,7 @@
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
 									  </br>
-									   <a class="btn btn-theme btn-block " href="config_perfilusuario.jsp" type="s">Eliminar del equipo </a>
+									   <a class="btn btn-theme btn-block " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
                                   </div>
                               </div>
 							   <div class="form-group ">
@@ -265,7 +269,7 @@
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
 									  </br>
-									   <a class="btn btn-theme btn-block " href="config_perfilusuario.jsp" type="s">Eliminar del equipo </a>
+									   <a class="btn btn-theme btn-block " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
                                   </div>
                               </div>
 							   <div class="form-group ">
@@ -273,7 +277,7 @@
                                   <div class="col-lg-10">
                                       <input type="text" class="form-control" id="futbol5_1" disabled>
 									  </br>
-									   <a class="btn btn-theme btn-block " href="config_perfilusuario.jsp" type="s">Eliminar del equipo </a>
+									   <a class="btn btn-theme btn-block " href="config_perfilusuario.html" type="s">Eliminar del equipo </a>
                                   </div>
                               </div>
 							  

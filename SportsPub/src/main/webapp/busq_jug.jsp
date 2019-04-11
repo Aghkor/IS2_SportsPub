@@ -1,3 +1,10 @@
+<%-- 
+    Document   : busq_jug
+    Created on : 2/04/2019, 12:14:38 PM
+    Author     : PERSONAL
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,17 +42,12 @@
       *********************************************************************************************************************************************************** -->
         <!--header start-->
       <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <!--logo start-->
-            <a href="principal.jsp" class="logo"><b>Sports Pub </b></a>
 	  <!--logo start-->
             <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
             <!--logo end-->
               <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.jsp">Logout</a></li>
+                    <li><a class="logout" href="principal.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -60,7 +62,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="perfil.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="principal.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -96,6 +98,7 @@
                           
                           <li class="active"><a  href="busq_jug.jsp">Buscar jugadores </a></li>
                           <li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
+                          <li><a  href="disp.jsp">Disponibilidad</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -104,9 +107,9 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="perfil.jsp">Perfil Usuario</a></li>
+                          <li><a  href="index.jsp">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
-						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
+			  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -137,19 +140,19 @@
           	<!-- DATOS GENERALES -->
           	<div class="row mt">
           		<div class="col-lg-12">
-                  <div class="form-panel">
+                  <section class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
-                      <form class="form-horizontal style-form" method="get">
-                          <div class="form-group">
+                      <form class="form-horizontal style-form" method="post">
+                          <section class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Usuario</label>
                               <div class="col-sm-10">
                                   <input type="text" class="form-control" id="usuario" type="text" >
                               </div>
-                          </div>              
+                          </section>              
 
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Edad</label>
-                              <div class="col-sm-10">
+                              <section class="col-sm-10">
                                   <select class="form-control" id="edad">
 						  <option>17</option>
 						  <option>18</option>
@@ -177,36 +180,36 @@
 						  <option>40</option>
 						 
 						</select>
-                              </div>
+                              </section>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
-                              <div class="col-sm-10">
+                              <section class="col-sm-10">
                                        <select class="form-control" id="genero" >
-                                        <option value="bog">Masculino</option>
-                                        <option value="med">Femenino</option>
+                                        <option >Masculino</option>
+                                        <option >Femenino</option>
                                         </select>
-                              </div>
+                              </section>
                           </div>
 						  
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">valorizacion</label>
-                              <div class="col-sm-10">
-                                   <label for="radio1">1</label><!--
-                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                                --><label for="radio2">2</label><!--
-                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                                --><label for="radio3">3</label><!--
-                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                                --><label for="radio4">4</label><!--
-                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                                --><label for="radio5">5</label>
-                              </div>
+                              <section class="col-sm-10">
+                                   <label for="radio1">1</label>
+                              <input id="radio2" type="radio" name="estrellas" value="4">
+                              <label for="radio2">2</label>
+                              <input id="radio3" type="radio" name="estrellas" value="3">
+                              <label for="radio3">3</label>
+                              <input id="radio4" type="radio" name="estrellas" value="2">
+                              <label for="radio4">4</label>
+                              <input id="radio5" type="radio" name="estrellas" value="1">
+                              <label for="radio5">5</label>
+                              </section>
                           </div>						  
 						 <a class="btn btn-theme btn-block" >Buscar jugador</a>
 		          
 				  <hr>
-                          </div>
+                          </section>
                       </form>
                   </div>
           		</div><!-- col-lg-12-->      	
@@ -232,18 +235,18 @@
 								<div class="row">
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION </p>
-										<p>Nombre</p>
-										<p>Apellido</p>
+										<p class="small mt">Nombre</p>
+										<p class="small mt">Apellido</p>
 									</div>
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION</p>
-										<p>Edad</p>
-										<p>Genero</p>
+										<p class="small mt">Edad</p>
+										<p class="small mt">Genero</p>
 
 									</div>
 									
 								</div>
-								<a class="btn btn-theme " href="perfil.jsp">Contactar jugador</a>
+								<button class="btn btn-theme " href="index.jsp">Contactar jugador</button>
 							</div>
 						</div>
                       	
@@ -259,18 +262,18 @@
 								<div class="row">
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION </p>
-										<p>Nombre</p>
-										<p>Equipo</p>
+										<p class="small mt>Nombre</p>
+										<p class="small mt>Equipo</p>
 									</div>
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION</p>
-										<p>Edad</p>
-										<p>Genero</p>
+										<p class="small mt>Edad</p>
+										<p class="small mt>Genero</p>
 
 									</div>
 									
 								</div>
-								<a class="btn btn-theme " href="perfil.jsp">Contactar Jugador</a>
+								<a class="btn btn-theme " href="">Contactar Jugador</a>
 							</div>
 						</div><!-- /col-md-4 -->
                       	
@@ -285,18 +288,18 @@
 								<div class="row">
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION </p>
-										<p>Nombre</p>
-										<p>Apellido</p>
+										<p class="small mt">Nombre</p>
+										<p class="small mt">Apellido</p>
 									</div>
 									<div class="col-md-6">
 										<p class="small mt">INFORMACION</p>
-										<p>Edad</p>
-										<p>Genero</p>
+										<p class="small mt">Edad</p>
+										<p class="small mt">Genero</p>
 
 									</div>
 									
 								</div>
-								<a class="btn btn-theme" href="perfil.jsp">Contactar Jugador</a>
+								<a class="btn btn-theme" href="">Contactar Jugador</a>
 							</div>
 						</div>><!-- /col-md-4 -->
                       	

@@ -74,7 +74,7 @@
 								<span>Muro</span>
 							</a>
 							<ul class="sub">
-								<li class="active"><a  href="principal.html">Inicio</a></li> 
+								<li class="active"><a  href="principal.jsp">Inicio</a></li> 
 
 								<li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
 							</ul>
@@ -86,8 +86,8 @@
 								<span>Equipo de futbol</span>
 							</a>
 							<ul class="sub">
-								<li><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
-								<li><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
+								<li><a  href="crear_eqfut5.jsp">Crear equipo de futbol 5</a></li>
+								<li><a  href="crear_eqfut8.jsp">Crear equipo de futbol 8</a></li>
 
 							</ul>
 						</li>
@@ -99,8 +99,8 @@
 							</a>
 							<ul class="sub">
 
-								<li><a  href="busq_jug.html">Buscar jugadores </a></li>
-								<li><a  href="busq_equipo.html">Buscar equipos</a></li>
+								<li><a  href="busq_jug.jsp">Buscar jugadores </a></li>
+								<li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
 							</ul>
 						</li>
 						<li class="sub-menu">
@@ -110,8 +110,8 @@
 							</a>
 							<ul class="sub">
 								<li><a  href="perfil.jsp">Perfil Usuario</a></li>
-								<li><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
-								<li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
+								<li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
+								<li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
 							</ul>
 						</li>
 						<li class="sub-menu">
@@ -120,9 +120,9 @@
 								<span>Configuracion </span>
 							</a>
 							<ul class="sub">
-								<li><a  href="config_perfilusuario.html">Configurar perfil </a></li>
-								<li><a  href="config_eq5.html">configurar equipo futbol 5 </a></li>
-								<li><a  href="config_eq8.html">configurar equipo futbol 8 </a></li>
+								<li><a  href="config_perfilusuario.jsp">Configurar perfil </a></li>
+								<li><a  href="config_eq5.jsp">configurar equipo futbol 5 </a></li>
+								<li><a  href="config_eq8.jsp">configurar equipo futbol 8 </a></li>
 							</ul>
 						</li>
 					</ul>
@@ -167,7 +167,7 @@
 											</div>
 
 										</div>
-										<a class="btn btn-theme " href="detalles_evento.html">Detalles Evento</a>
+										<a class="btn btn-theme " href="detalles_evento.jsp">Detalles Evento</a>
 									</div>
 								</div>
 
@@ -194,7 +194,7 @@
 											</div>
 
 										</div>
-										<a class="btn btn-theme " href="detalles_evento.html">Detalles Evento</a>
+										<a class="btn btn-theme " href="detalles_evento.jsp">Detalles Evento</a>
 									</div>
 								</div><!-- /col-md-4 -->
 
@@ -220,7 +220,7 @@
 											</div>
 
 										</div>
-										<a class="btn btn-theme " href="detalles_evento.html">Detalles Evento</a>
+										<a class="btn btn-theme " href="detalles_evento.jsp">Detalles Evento</a>
 									</div>
 								</div>><!-- /col-md-4 -->
 

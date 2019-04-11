@@ -235,7 +235,7 @@
 									</div>
 
 
-									<button class="btn btn-theme btn-block" href="perfilequipo5.jsp" type="submit"><i class="fa fa-lock"></i> VER PERFIL DE LOS EQUIPOS </button>
+									<button class="btn btn-theme btn-block" href="perfilequipo5.jsp" type="submit">VER PERFIL DE LOS EQUIPOS </button>
 									<hr>
 								</form>
 							</div><!-- /form-panel -->
@@ -258,7 +258,7 @@
 										</div>
 									</div>
 									<p id="demo"></p>
-									<button class="btn btn-theme btn-block" href="perfilequipo8.jsp" type="submit"><i class="fa fa-lock"></i> VER PERFIL DE LOS EQUIPOS</button>
+									<button class="btn btn-theme btn-block" href="perfilequipo8.jsp" type="submit"> VER PERFIL DE LOS EQUIPOS</button>
 									<hr>
 								</form>
 							</div><!-- /form-panel -->
