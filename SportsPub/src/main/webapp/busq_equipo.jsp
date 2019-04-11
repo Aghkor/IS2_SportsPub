@@ -4,6 +4,7 @@
     Author     : PERSONAL
 --%>
 
+<%@page import="co.usa.sports_pub.modelos.vo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,9 +62,10 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
+                  <% Usuario user = (Usuario) session.getAttribute("usuario");%>
               
               	  <p class="centered"><a href="principal.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Usuario</h5>
+              	  <h5 class="centered"><%= user.getUsuario()%></h5>
               	  	
                   <li class="sub-menu">
                           <a href="javascript:;" >
@@ -107,7 +109,7 @@
                           <span>Perfiles </span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="index.jsp">Perfil Usuario</a></li>
+                          <li><a  href="perfil.jsp">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
 						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
@@ -142,7 +144,7 @@
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales </h4>
-                      <form class="form-horizontal style-form" method="get">
+                      <form class="form-horizontal style-form" method="post">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nombre del Equipo</label>
                               <section class="col-sm-10">
@@ -175,6 +177,7 @@
                                         </select>
                               </section>
                           </div>
+                           </form>
 
                           
                                                  
@@ -182,7 +185,7 @@
 		          
 				  <hr>
                           </div>
-                      </form>
+                     
                   </div>
           		</div><!-- col-lg-12-->      	
           	</div><!-- /row -->
