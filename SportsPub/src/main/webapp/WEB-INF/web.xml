@@ -24,6 +24,10 @@
         <servlet-name>ServletEvents</servlet-name>
         <servlet-class>co.usa.sports_pub.controladores.servlets.ServletEvents</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Bequipos</servlet-name>
+        <servlet-class>co.usa.sports_pub.controladores.servlets.Bequipos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servletuser</servlet-name>
         <url-pattern>/Servletuser</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ServletEvents</servlet-name>
         <url-pattern>/ServletEvents</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Bequipos</servlet-name>
+        <url-pattern>/Bequipos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -6,6 +6,7 @@
 package co.usa.sports_pub.controladores.servlets;
 
 import co.usa.sports_pub.modelos.Usuriomanager.Usermanager;
+import co.usa.sports_pub.modelos.vo.Equipo;
 import co.usa.sports_pub.modelos.vo.Usuario;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -20,9 +21,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Fabio
+ * @author USER
  */
-public class Busquedas extends HttpServlet {
+public class Bequipos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +42,10 @@ public class Busquedas extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Busquedas</title>");            
+            out.println("<title>Servlet Bequipos</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Busquedas at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Bequipos at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -63,7 +64,6 @@ public class Busquedas extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        
         String username = null;
         if (request.getSession().getAttribute("usuario") != null) {
             Usuario u = (Usuario) request.getSession().getAttribute("usuario");
@@ -73,21 +73,14 @@ public class Busquedas extends HttpServlet {
         }
                 try {
 
-            //usuarios q estan disponibles para jugar y buscar equipos
+            
            Usermanager lista=new Usermanager();
-                List<Usuario> usuariosdisp = lista.usuariosDisponibles();
-                
-                //usuarios que pertenecen a un equipo.
-                //
-                //
-                //
-                //
-                //
+                List<Equipo> equipos = lista.equiposDisponibles();
                 
           try (PrintWriter out = response.getWriter()) {
               
                     Gson gson = new Gson();
-                    out.println(gson.toJson(usuariosdisp));
+                    out.println(gson.toJson(equipos));
                     return;
                 }
 
@@ -95,9 +88,10 @@ public class Busquedas extends HttpServlet {
             
 
         } catch (IOException ex) {
-            Logger.getLogger(Busquedas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Bequipos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     /**
      * Handles the HTTP <code>POST</code> method.
      *

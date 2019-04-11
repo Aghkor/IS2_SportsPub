@@ -38,6 +38,82 @@ public class equipoDAO {
 			}
 		}
 	}
+        public List<Equipo> getObject(Equipo equipo) {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Equipo> query = (TypedQuery<Equipo>) en.createQuery(
+					"SELECT u FROM Equipo u WHERE u.equipo =:equipo", Equipo.class);
+  
+			query.setParameter("equipo",equipo.getNombre());
+			
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
+	public List<Equipo> getLider(Equipo equipo) {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Equipo> query = (TypedQuery<Equipo>) en.createQuery(
+					"SELECT u FROM Equipo u WHERE u.LiderEquipo =:LiderEquipo", Equipo.class);
+  
+			query.setParameter("LiderEquipo",equipo.getLiderEquipo());
+			
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
+        
+        public List<Equipo> equiposdisponibles() {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Equipo> query = (TypedQuery<Equipo>) en.createQuery(
+					"SELECT u FROM Equipo u WHERE u.disponibilidad =:si", Equipo.class);
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
 	public List<Equipo> getID(String name) {
 		try {
 
