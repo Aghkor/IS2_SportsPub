@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+   <script   src="C:/Users/ivane/Desktop/Comentarios/js.js"></script>
+
+    <title>Perfil - SportsPub</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="C:/Users/ivane/Desktop/JavaScript/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+   
+        
+    <!-- Custom styles for this template -->
+    <link href="C:/Users/ivane/Desktop/JavaScript/style.css" rel="stylesheet">
+    <link href="C:/Users/ivane/Desktop/JavaScript/style-responsive.css" rel="stylesheet">
+    <script   src="C:/Users/ivane/Desktop/Comentarios/js.js"></script>
+   <link rel="stylesheet" type="text/css" href="C:/Users/ivane/Desktop/Comentarios/css.css">
+    
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+        <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="principal.jsp" class="logo"><b>Sports Pub </b></a>
+	  <!--logo start-->
+            <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
+            <!--logo end-->
+              <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="index.html">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered" id="usuario_encabezado">Usuario</h5>
+              	  	
+                  <li class="sub-menu">
+                          <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>Muro</span>
+                      </a>
+					  <ul class="sub">
+					      <li><a  href="principal.jsp">Inicio</a></li>  
+						       
+                          <li><a  href="pub_evento.html">Publicar evento nuevo</a></li>                          
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Equipo de futbol</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="crear_eqfut5.html">Crear equipo de futbol 5</a></li>
+						  <li><a  href="crear_eqfut8.html">Crear equipo de futbol 8</a></li>
+                                       
+                      </ul>
+                  </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-dashboard"></i>
+                          <span>Buscar</span>
+                      </a>
+                      <ul class="sub">
+                          
+                          <li><a  href="busq_jug.html">Buscar jugadores </a></li>
+                          <li><a  href="busq_equipo.html">Buscar equipos</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-th"></i>
+                          <span>Perfiles </span>
+                      </a>
+                      <ul class="sub">
+                          <li class="active"><a  href="perfil.html">Comentarios</a></li>
+                          <li><a  href="perfilequipo5.html">Perfil Equipo futbol 5 </a></li>
+						  <li><a  href="perfilequipo8.html">Perfil Equipo futbol 8 </a></li>
+                      </ul>
+                  </li>
+				  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-cogs"></i>
+                          <span>Configuracion </span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="config_perfilusuario.html">Configurar perfil </a></li>
+						  <li><a  href="config_eq5.html">configurar equipo futbol 5 </a></li>
+						  <li><a  href="config_eq8.html">configurar equipo futbol 8 </a></li>
+                      </ul>
+                  </li>
+                </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center><h3>¿Por favor comente que te parecio el partido?</h3></center>
+      <div class="comentarios">
+      <form  id="nuevo-comentario">
+          <label for="Nombre">Nombre: </label>
+          <input type="text" class="for-control" class="Nombres"id="Nombre"/>
+          <br>
+          <label for="Comentario">Comentario: </label>
+          <textarea   class="COMENTA" class="for-control" id="Comentario"></textarea><br>
+        <input type="submit" value="Comentar"/>
+      </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Comentario</th>
+            </tr>
+          </thead>
+          <tbody id="fila-tabla">
+             
+          </tbody>          
+        </table>  
+      </div>
+  </body>
+</html>
