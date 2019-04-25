@@ -62,13 +62,13 @@ public class eventsDAO {
 	}
 	
 	
-	public List<EncuentroEquipo> getEventByTeam() {
+	public List<Encuentro> getEvent() {
 		try {
 
 			en = EMF.get().createEntityManager();
 			en.getTransaction().begin();
-			TypedQuery<EncuentroEquipo> query = (TypedQuery<EncuentroEquipo>) en.createQuery(
-					"SELECT e FROM EncuentroEquipo ", EncuentroEquipo.class);
+			TypedQuery<Encuentro> query = (TypedQuery<Encuentro>) en.createQuery(
+					"SELECT e FROM Encuentro e", Encuentro.class);
 			
 			en.getTransaction().commit();
 					

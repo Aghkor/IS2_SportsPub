@@ -15,7 +15,9 @@ function init() {
 
 
 		var userdata = '{"usuario":' + txtUsername.value + ',"contrasena":' + txtPassword.value + '}';
+               
 		loginByAjax(userdata);
+                
 		//resetForm();
 	}
 
@@ -30,7 +32,7 @@ function init() {
 				if (message == "Usuario o password incorrectos") {
 					alert(message);
 				} else {
-
+                                  
 					document.location.href = 'principal.jsp';
 				}
 			}

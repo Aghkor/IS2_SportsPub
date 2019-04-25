@@ -40,8 +40,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Equipo.findByCantidadDeJugador", query = "SELECT e FROM Equipo e WHERE e.cantidadDeJugador = :cantidadDeJugador")})
 public class Equipo implements Serializable {
 
-	@OneToMany(mappedBy = "ide")
-	private Collection<EncuentroEquipo> encuentroEquipoCollection;
+	
 
 	@Size(max = 2)
     @Column(name = "disponibilidad")
@@ -78,10 +77,6 @@ public class Equipo implements Serializable {
     private int cantidadDeJugador;
     @OneToMany(mappedBy = "ide")
     private Collection<UsuarioEquipo> usuarioEquipoCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ide1")
-    private Collection<Encuentro> encuentroCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "ide2")
-    private Collection<Encuentro> encuentroCollection1;
     @OneToMany(mappedBy = "ide")
     private Collection<Valorizacionequipo> valorizacionequipoCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "ide")
@@ -160,23 +155,7 @@ public class Equipo implements Serializable {
         this.usuarioEquipoCollection = usuarioEquipoCollection;
     }
 
-    @XmlTransient
-    public Collection<Encuentro> getEncuentroCollection() {
-        return encuentroCollection;
-    }
-
-    public void setEncuentroCollection(Collection<Encuentro> encuentroCollection) {
-        this.encuentroCollection = encuentroCollection;
-    }
-
-    @XmlTransient
-    public Collection<Encuentro> getEncuentroCollection1() {
-        return encuentroCollection1;
-    }
-
-    public void setEncuentroCollection1(Collection<Encuentro> encuentroCollection1) {
-        this.encuentroCollection1 = encuentroCollection1;
-    }
+    
 
     @XmlTransient
     public Collection<Valorizacionequipo> getValorizacionequipoCollection() {
@@ -229,13 +208,6 @@ public class Equipo implements Serializable {
 		this.disponibilidad = disponibilidad;
 	}
 
-	@XmlTransient
-	public Collection<EncuentroEquipo> getEncuentroEquipoCollection() {
-		return encuentroEquipoCollection;
-	}
-
-	public void setEncuentroEquipoCollection(Collection<EncuentroEquipo> encuentroEquipoCollection) {
-		this.encuentroEquipoCollection = encuentroEquipoCollection;
-	}
+	
     
 }

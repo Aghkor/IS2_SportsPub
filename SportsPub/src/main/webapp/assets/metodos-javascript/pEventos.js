@@ -7,42 +7,47 @@
 document.addEventListener("DOMContentLoaded", init, true);
 
 function init() {
+    
 	document.querySelector("#pEvent").addEventListener("click", handlePevent, true);
 
 	function handlePevent(e) {
 		e.preventDefault();
-		var txtEquipo1 = document.getElementById("nombre_equipo1");
-		var txtEquipo2 = document.getElementById("nombre_equipo2");
+		
 		var txtUbicacion=document.getElementById("ubicacion");
 		var txtTipoF = document.getElementById("tipo_futbol");
-		var txtTiempoespera = document.getElementById("tiempo_espera");
+		var txtfechaevento= document.getElementById("fecha_evento");
+                var txthoraini= document.getElementById("hora_ini");
+                var txthorafin= document.getElementById("hora_fin");
 		var txtNuser = document.getElementById("num_jugadores");
-	    var txtGenero = document.getElementById("genero");
+	        var txtGenero = document.getElementById("genero");
 		var txtEmax = document.getElementById("edad_max");
 		var txtEmin = document.getElementById("edad_min");
-		var txtCondiciones=txtNuser.value+","+txtGenero.value+","+txtEmax.value+","+","+txtEmin.value;
-		var userdata = '{"equipo1":' + txtEquipo1.value + '"equipo2":' + txtEquipo2.value + '"ubicacion":' + txtUbicacion.value  +',"tipoDeFutbol":' + txtTipoF.value + ',"tiempoEspera":' + txtTiempoespera.value + ',"condiciones":' + txtCondiciones.value + '}';
+		var txtnomEv = document.getElementById("nombre_evento");
+                
+		var userdata = '{"ubicacion":"' + txtUbicacion.value + '","tipo_de_futbol":"' + txtTipoF.value 
+                        + '","fecha_evento":"' + txtfechaevento.value  +'","hora_ini":"' + txthoraini.value + '","hora_fin":"' + txthorafin.value +'","numser":' + txtNuser.value + ',"genero":"' + txtGenero.value + 
+                        '","emax":' + txtEmax.value + ',"emin":' + txtEmin.value +',"nomev":"' + txtnomEv.value +'"}';
 		PeventByAjax(userdata);
-		
+		console.log(userdata);
 	}
-
+       
 	function PeventByAjax(data) {
 		var request = new XMLHttpRequest();
 		request.open("post", "publicacionEventos", true);
 		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		request.onreadystatechange = function () {
 			// si la respuesta fue exitosa
-			if (request.readyState == 4 && request.status == 200) {
+			if (request.readyState === 4 && request.status === 200) {
 				var message = request.responseText;
-				if (message == "Encuentro registrado correctamente") {
+				if (message === "Encuentro registrado correctamente") {
 					alert(message);
-					document.location.href = 'principal.jsp';
+					document.location.href = 'detalles_evento.jsp';
 				} else {
 						alert(message+" intente nuevamente");
 				}
 			}
 			// si la respuesta trajo error
-			else if (request.readyState == 4 && request.status != 200) {
+			else if (request.readyState === 4 && request.status !== 200) {
 				var message = request.responseText;
 				message = request.responseText;
 				alert(request.statusText);
@@ -55,7 +60,6 @@ function init() {
 		
 		
 	}
-	
 	
 	
 	

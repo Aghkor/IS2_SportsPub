@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -41,14 +40,18 @@
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
-       <!--header start-->
+      <!--header start-->
       <header class="header black-bg">
-	  <!--logo start-->
-            <a href="principal.jsp" class="logo"><b>SportsPub</b></a>
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.jsp" class="logo"><b>Sports Pub </b></a>
             <!--logo end-->
-              <div class="top-menu">
+            
+            <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="incio.jsp">Logout</a></li>
+                    <li><a class="logout" href="login.html">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -62,8 +65,9 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
+                  
               
-              	  <p class="centered"><a href="principal.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="perfil.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">Usuario</h5>
               	  	
                   <li class="sub-menu">
@@ -72,7 +76,7 @@
                           <span>Muro</span>
                       </a>
 					  <ul class="sub">
-					      <li><a  href="principal.jsp">Inicio</a></li>  
+					      <li><a  href="index.jsp">Inicio</a></li>  
                           <li class="active"><a  href="pub_evento.jsp">Publicar evento nuevo</a></li>                          
                       </ul>
                   </li>
@@ -98,7 +102,6 @@
                           
                           <li><a  href="busq_jug.jsp">Buscar jugadores </a></li>
                           <li><a  href="busq_equipo.jsp">Buscar equipos</a></li>
-                          <li ><a  href="disp.jsp">Disponibilidad</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -109,7 +112,7 @@
                       <ul class="sub">
                           <li><a  href="perfil.jsp">Perfil Usuario</a></li>
                           <li><a  href="perfilequipo5.jsp">Perfil Equipo futbol 5 </a></li>
-			  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
+						  <li><a  href="perfilequipo8.jsp">Perfil Equipo futbol 8 </a></li>
                       </ul>
                   </li>
 				  <li class="sub-menu">
@@ -142,16 +145,11 @@
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales del evento  </h4>
                       <form class="form-horizontal style-form" method="get">
-					   <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Solicita el evento</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="lider_equipo" type="text" >
-                              </div>
-                          </div>
+					   
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Nombre del equipo</label>
+                              <label class="col-sm-2 col-sm-2 control-label">Nombre del evento</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="nombre_equipo" type="text" >
+                                  <input type="text" class="form-control" id="nombre_evento" type="text" >
                               </div>
                           </div>
                           <div class="form-group">
@@ -166,20 +164,27 @@
                                   <input type="text" class="form-control" id="tipo_futbol" type="text" >
                               </div>
                           </div>
-						  <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Tiempo de espera </label>
-                              <div class="col-sm-10">
-                                  <select class="form-control" id="num_jugadores">
-						  <option>10 minutos</option>
-						  <option>20 minutos</option>
-						  <option>30 minutos</option>
-						  <option>40 minutos</option>
-						  <option>50 minutos</option>
-						  <option>60 minutos</option>
-						  </select>
-						  
+				 <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Fecha </label>
+                              <div class="col-sm-10"> 
+                                 <input id= "fecha_evento"type="date" name="fecha" min="2019-04-25" max="2019-12-31" step="2">   			  
                               </div>
                           </div>
+						  
+			 <div class="form-group">
+                             <div class="col-sm-10"> 
+                              <label class="col-sm-2 col-sm-2 control-label">Hora Inicial</label>  
+                              <input id = "hora_ini"type="time" name="hora" min="18:00"  max="21:00" step="3600">
+                              </div>
+                             <br>
+                             <br>
+                             <div class="col-sm-10"> 
+                              <label class="col-sm-2 col-sm-2 control-label">Hora Final</label> 			  
+                                                           
+                               <input id = "hora_fin"type="time" name="hora" min="18:00"  max="21:00" step="3600">	
+                                </div>
+                          </div>
+						  
 						  
 						  <h4 class="mb"><i class="fa fa-angle-right"></i> Se solicita </h4>
 
@@ -188,13 +193,11 @@
                               <label class="col-sm-2 col-sm-2 control-label">Numero de jugadores</label>
                               <div class="col-sm-10">
                              <select class="form-control" id="num_jugadores">
-						  <option>1</option>
-						  <option>2</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option>
-						
-						 
+						  <option value="1">1</option>
+						  <option value="2">2</option>
+						  <option value="3">3</option>
+						  <option value="4">4</option>
+						  <option value="5">5</option>					 
 						</select>
                               </div>
                           </div>
@@ -202,15 +205,83 @@
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
                               <div class="col-sm-10">
                                   <select class="form-control" id="genero">
-						  <option>Masculino</option>
-						  <option>Femenino</option>
-						   <option>Mixto</option>
-						 			 
+                                      
+						  <option value="mas">Masculino</option>
+						  <option value="fem">Femenino</option>
+						  <option value ="mix">Mixto</option>						 			 
 						</select>
                               </div>
-                          </div>  						  
+                          </div>  
+                           
+                             <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Edad maxima</label>
+                              <div class="col-sm-10">
+				  <select class="form-control" id="edad_max" >
+						  <option value="17">17</option>
+						  <option value="18">18</option>
+						  <option value="19">19</option>
+						  <option value="20">20</option>
+						  <option value="21">21</option>
+						  <option value="22">22</option>
+						  <option value="23">23</option>
+						  <option value="24">24</option>
+						  <option value="25">25</option>
+						  <option value="26">26</option>
+						  <option value="27">27</option>
+						  <option value="28">28</option>
+						  <option value="29">29</option>
+						  <option value="30">30</option>
+						  <option value="31">31</option>
+						  <option value="32">32</option>
+						  <option value="33">33</option>
+						  <option value="34">34</option>
+						  <option value="35">35</option>
+						  <option value="36">36</option>
+						  <option value="37">37</option>
+						  <option value="38">38</option>
+						  <option value="39">39</option>
+						  <option value="40">40</option>
+						 
+						</select>
+
+                              </div>
+                          </div> 
+                            <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Edad minima</label>
+                              <div class="col-sm-10">
+				<select class="form-control" id="edad_min" >
+						 <option value="17">17</option>
+						  <option value="18">18</option>
+						  <option value="19">19</option>
+						  <option value="20">20</option>
+						  <option value="21">21</option>
+						  <option value="22">22</option>
+						  <option value="23">23</option>
+						  <option value="24">24</option>
+						  <option value="25">25</option>
+						  <option value="26">26</option>
+						  <option value="27">27</option>
+						  <option value="28">28</option>
+						  <option value="29">29</option>
+						  <option value="30">30</option>
+						  <option value="31">31</option>
+						  <option value="32">32</option>
+						  <option value="33">33</option>
+						  <option value="34">34</option>
+						  <option value="35">35</option>
+						  <option value="36">36</option>
+						  <option value="37">37</option>
+						  <option value="38">38</option>
+						  <option value="39">39</option>
+						  <option value="40">40</option>
+						 
+						</select>
+
+                              </div>
+                          </div>
+                                                
 						  
-						 <a class="btn btn-theme  " href="index.html">Publicar evento</a>
+						 <a  id="pEvent" class="btn btn-theme" >Publicar evento</a>
 		          
 				  <hr>
                           </div>
@@ -271,16 +342,10 @@
 	
 	
 	<script src="assets/js/form-component.js"></script>    
+        
+    <script type="text/javascript" src="assets/metodos-javascript/pEventos.js"></script>  
     
-    
-  <script>
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
-  </script>
+  
 
   </body>
 </html>

@@ -37,19 +37,52 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Encuentro.findByIdp", query = "SELECT e FROM Encuentro e WHERE e.idp = :idp")
     , @NamedQuery(name = "Encuentro.findByUbicacion", query = "SELECT e FROM Encuentro e WHERE e.ubicacion = :ubicacion")
     , @NamedQuery(name = "Encuentro.findByTipoDeFutbol", query = "SELECT e FROM Encuentro e WHERE e.tipoDeFutbol = :tipoDeFutbol")
-    , @NamedQuery(name = "Encuentro.findByTiempoEspera", query = "SELECT e FROM Encuentro e WHERE e.tiempoEspera = :tiempoEspera")})
+    })
 public class Encuentro implements Serializable {
 
-	@OneToMany(mappedBy = "idp")
-	private Collection<EncuentroEquipo> encuentroEquipoCollection;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idp")
-	private Collection<EncuentroUsuario> encuentroUsuarioCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idp")
+    private Collection<ComentarioEncuentro> comentarioEncuentroCollection;
+    @OneToMany(mappedBy = "idp")
+    private Collection<EncuentroEquipo> encuentroEquipoCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idp")
+    private Collection<EncuentroUsuario> encuentroUsuarioCollection;
+    @OneToMany(mappedBy = "idp")
+    private Collection<Valorizacionpartido> valorizacionpartidoCollection;
 
-	@Basic(optional = false)
+    @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "condiciones")
-	private String condiciones;
+    @Column(name = "hora_fin")
+    private String horaFin;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "hora_ini")
+    private String horaIni;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "fecha_evento")
+    private String fechaEvento;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "emax")
+    private String emax;
+    @Column(name = "emin")
+    private Integer emin;
+    @Size(max = 50)
+    @Column(name = "nomev")
+    private String nomev;
+    @Size(max = 50)
+    @Column(name = "genero")
+    private String genero;
+    @Column(name = "numser")
+    private Integer numser;
+
+	
+
+
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -67,24 +100,9 @@ public class Encuentro implements Serializable {
     @Size(min = 1, max = 69)
     @Column(name = "tipo_de_futbol")
     private String tipoDeFutbol;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
-    @Column(name = "tiempo_espera")
-    private String tiempoEspera;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idp")
-    private Collection<ComentarioEncuentro> comentarioEncuentroCollection;
-    @OneToMany(mappedBy = "idp")
-    private Collection<Valorizacionpartido> valorizacionpartidoCollection;
-    @JoinColumn(name = "ide1", referencedColumnName = "ide")
-    @ManyToOne(optional = false)
-    private Equipo ide1;
-    @JoinColumn(name = "ide2", referencedColumnName = "ide")
-    @ManyToOne(optional = false)
-    private Equipo ide2;
+    
 	
-	private String equipo1;
-	private String equipo2;
+	
 
     public Encuentro() {
     }
@@ -93,11 +111,11 @@ public class Encuentro implements Serializable {
         this.idp = idp;
     }
 
-    public Encuentro(Integer idp, String ubicacion, String tipoDeFutbol, String tiempoEspera) {
+    public Encuentro(Integer idp, String ubicacion, String tipoDeFutbol) {
         this.idp = idp;
         this.ubicacion = ubicacion;
         this.tipoDeFutbol = tipoDeFutbol;
-        this.tiempoEspera = tiempoEspera;
+       
     }
 
     public Integer getIdp() {
@@ -124,48 +142,9 @@ public class Encuentro implements Serializable {
         this.tipoDeFutbol = tipoDeFutbol;
     }
 
-    public String getTiempoEspera() {
-        return tiempoEspera;
-    }
+  
 
-    public void setTiempoEspera(String tiempoEspera) {
-        this.tiempoEspera = tiempoEspera;
-    }
-
-    @XmlTransient
-    public Collection<ComentarioEncuentro> getComentarioEncuentroCollection() {
-        return comentarioEncuentroCollection;
-    }
-
-    public void setComentarioEncuentroCollection(Collection<ComentarioEncuentro> comentarioEncuentroCollection) {
-        this.comentarioEncuentroCollection = comentarioEncuentroCollection;
-    }
-
-    @XmlTransient
-    public Collection<Valorizacionpartido> getValorizacionpartidoCollection() {
-        return valorizacionpartidoCollection;
-    }
-
-    public void setValorizacionpartidoCollection(Collection<Valorizacionpartido> valorizacionpartidoCollection) {
-        this.valorizacionpartidoCollection = valorizacionpartidoCollection;
-    }
-
-    public Equipo getIde1() {
-        return ide1;
-    }
-
-    public void setIde1(Equipo ide1) {
-        this.ide1 = ide1;
-    }
-
-    public Equipo getIde2() {
-        return ide2;
-    }
-
-    public void setIde2(Equipo ide2) {
-        this.ide2 = ide2;
-    }
-
+   
     @Override
     public int hashCode() {
         int hash = 0;
@@ -191,40 +170,106 @@ public class Encuentro implements Serializable {
         return "co.usa.sports_pub.modelos.vo.Encuentro[ idp=" + idp + " ]";
     }
 
-	public String getCondiciones() {
-		return condiciones;
-	}
 
-	public void setCondiciones(String condiciones) {
-		this.condiciones = condiciones;
-	}
 	
-	public String getEquipo1(){
-	
-		return this.equipo1;
-	}
-	
-	public String getEquipo2(){
-	
-		return this.equipo2;
-	}
+    public String getHoraFin() {
+        return horaFin;
+    }
 
-	@XmlTransient
-	public Collection<EncuentroEquipo> getEncuentroEquipoCollection() {
-		return encuentroEquipoCollection;
-	}
+    public void setHoraFin(String horaFin) {
+        this.horaFin = horaFin;
+    }
 
-	public void setEncuentroEquipoCollection(Collection<EncuentroEquipo> encuentroEquipoCollection) {
-		this.encuentroEquipoCollection = encuentroEquipoCollection;
-	}
+    public String getHoraIni() {
+        return horaIni;
+    }
 
-	@XmlTransient
-	public Collection<EncuentroUsuario> getEncuentroUsuarioCollection() {
-		return encuentroUsuarioCollection;
-	}
+    public void setHoraIni(String horaIni) {
+        this.horaIni = horaIni;
+    }
 
-	public void setEncuentroUsuarioCollection(Collection<EncuentroUsuario> encuentroUsuarioCollection) {
-		this.encuentroUsuarioCollection = encuentroUsuarioCollection;
-	}
+    public String getFechaEvento() {
+        return fechaEvento;
+    }
+
+    public void setFechaEvento(String fechaEvento) {
+        this.fechaEvento = fechaEvento;
+    }
+
+    public String getEmax() {
+        return emax;
+    }
+
+    public void setEmax(String emax) {
+        this.emax = emax;
+    }
+
+    public Integer getEmin() {
+        return emin;
+    }
+
+    public void setEmin(Integer emin) {
+        this.emin = emin;
+    }
+
+    public String getNomev() {
+        return nomev;
+    }
+
+    public void setNomev(String nomev) {
+        this.nomev = nomev;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public Integer getNumser() {
+        return numser;
+    }
+
+    public void setNumser(Integer numser) {
+        this.numser = numser;
+    }
+
+    @XmlTransient
+    public Collection<ComentarioEncuentro> getComentarioEncuentroCollection() {
+        return comentarioEncuentroCollection;
+    }
+
+    public void setComentarioEncuentroCollection(Collection<ComentarioEncuentro> comentarioEncuentroCollection) {
+        this.comentarioEncuentroCollection = comentarioEncuentroCollection;
+    }
+
+    @XmlTransient
+    public Collection<EncuentroEquipo> getEncuentroEquipoCollection() {
+        return encuentroEquipoCollection;
+    }
+
+    public void setEncuentroEquipoCollection(Collection<EncuentroEquipo> encuentroEquipoCollection) {
+        this.encuentroEquipoCollection = encuentroEquipoCollection;
+    }
+
+    @XmlTransient
+    public Collection<EncuentroUsuario> getEncuentroUsuarioCollection() {
+        return encuentroUsuarioCollection;
+    }
+
+    public void setEncuentroUsuarioCollection(Collection<EncuentroUsuario> encuentroUsuarioCollection) {
+        this.encuentroUsuarioCollection = encuentroUsuarioCollection;
+    }
+
+    @XmlTransient
+    public Collection<Valorizacionpartido> getValorizacionpartidoCollection() {
+        return valorizacionpartidoCollection;
+    }
+
+    public void setValorizacionpartidoCollection(Collection<Valorizacionpartido> valorizacionpartidoCollection) {
+        this.valorizacionpartidoCollection = valorizacionpartidoCollection;
+    }
     
 }

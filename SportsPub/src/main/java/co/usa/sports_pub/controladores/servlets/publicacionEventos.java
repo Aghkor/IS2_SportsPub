@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -63,11 +64,17 @@ public class publicacionEventos extends HttpServlet {
 
 		PrintWriter writer = response.getWriter();
 		String encuentroJson = request.getParameter("encuentrodata");
-		Encuentro ec1 = (Encuentro) Utils.fromJson(encuentroJson, Encuentro.class);
-
+		Encuentro ec1=(Encuentro) Utils.fromJson(encuentroJson, Encuentro.class);
+                
+                
+                
+                HttpSession misession = request.getSession();
+                
+                
+                misession.setAttribute("evento1", ec1);
+             
 		Eventsmanager em = new Eventsmanager();
 		String msj = em.setEvent(ec1);
-
 		writer.println(msj);
 
 	}

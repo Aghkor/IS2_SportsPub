@@ -142,18 +142,8 @@
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Datos Generales del evento  </h4>
                       <form class="form-horizontal style-form" method="get">
-					   <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Lider del equipo</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="lider_equipo" type="text" disabled>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Nombre del equipo</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="nombre_equipo" type="text" disabled>
-                              </div>
-                          </div>
+					   
+                        
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Ubicacion </label>
                               <div class="col-sm-10">
@@ -164,26 +154,30 @@
                               <label class="col-sm-2 col-sm-2 control-label">Tipo de futbol </label>
                               <div class="col-sm-10">
                                  <select class="form-control" id="tipo_futbol" disabled >
-                                        <option value="bog">Futbol 5</option>
-                                        <option value="med">Futbol 8</option>
+                                        <option value="fut_5">Futbol 5</option>
+                                        <option value="fut_5">Futbol 8</option>
                                          </select>
                               </div>
                           </div>
-						  <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Tiempo de espera </label>
-                              <div class="col-sm-10">
-                                  <select class="form-control" id="tiempo_espera" disabled>
-						  <option>10 minutos</option>
-						  <option>20 minutos</option>
-						  <option>30 minutos</option>
-						  <option>40 minutos</option>
-						  <option>50 minutos</option>
-						  <option>60 minutos</option>
-						  </select>
-						  
+                           <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Fecha </label>
+                              <div class="col-sm-10"> 
+                                 <input id= "fecha_evento"type="date" name="fecha" min="2018-03-25" max="2018-05-25" step="2">   			  
                               </div>
                           </div>
-						  
+			 <div class="form-group">
+                             <div class="col-sm-10"> 
+                              <label class="col-sm-2 col-sm-2 control-label">Hora Inicial</label>  
+                              <input id = "hora_evento"type="time" name="hora" min="18:00"  max="21:00" step="3600" disable>
+                              </div>
+                             <br>
+                             <br>
+                             <div class="col-sm-10"> 
+                              <label class="col-sm-2 col-sm-2 control-label">Hora Final</label> 			  
+                                                           
+                               <input id = "hora_evento"type="time" name="hora" min="18:00"  max="21:00" step="3600" disable>	
+                                </div>
+                          </div>						  
 						  
 						  <h4 class="mb"><i class="fa fa-angle-right"></i> Se solicita </h4>
 
@@ -198,13 +192,13 @@
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
                               <div class="col-sm-10">
                                   <select class="form-control" id="genero" disabled>
-                                        <option value="bog">Masculino</option>
-                                        <option value="med">Femenino</option> 
+                                        <option value="mas">Masculino</option>
+                                        <option value="fem">Femenino</option> 
 										 <option value="med">Mixto</option> 
 										 </select>
                               </div>
                           </div>
-						  <div class="form-group">
+				<div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Edad maxima</label>
                               <div class="col-sm-10">
 							   <select class="form-control" id="edad_max" disabled>
@@ -238,7 +232,7 @@
                               </div>
                           </div>
 						  
-						   <div class="form-group">
+			  <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Edad minima</label>
                               <div class="col-sm-10">
 							   <select class="form-control" id="edad_max" disabled>
@@ -276,7 +270,7 @@
 
   						  
 						  
-						 <a class="btn btn-theme btn-block  " href="principal.html">Aceptar evento</a>
+						 <a class="btn btn-theme btn-block  " href="principal.jsp">Volver a pagina principal</a>
 		          
 				  <hr>
                           </div>

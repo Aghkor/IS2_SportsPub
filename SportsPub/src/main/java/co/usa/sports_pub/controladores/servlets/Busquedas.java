@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -91,8 +91,9 @@ public class Busquedas extends HttpServlet {
                 List<Usuario> usuariosdisp = lista.usuariosDisponibles();
                  Gson gson = new Gson();                    
                     String usuariodisp = gson.toJson(usuariosdisp);
-                    String JSON = "{\"disp\": {\"usuario\":\"" + usuariodisp +"\"}}" ;
+                    String JSON = "{\"disp\": {\"usuario\":\"" + usuariodisp +"\"}}";
                     response.setContentType("text/html;charset=UTF-8");
+                    
                 //usuarios que pertenecen a un equipo.
                 //
                 //
@@ -103,7 +104,7 @@ public class Busquedas extends HttpServlet {
           try (PrintWriter out = response.getWriter()) {
               
                    
-                    out.println(gson.toJson(usuariosdisp));
+                    out.println(gson.toJson(JSON));
                     return;
                 }
 

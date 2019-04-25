@@ -264,15 +264,15 @@
       <!--footer end-->
   </section>
 
-      <script>
+      <script type="text/javascript">
           
               document.getElementById("MostrarDatos").addEventListener("click",function(){
-            $.post("Busquedas",$(document.forms[0]),function(response){
+            $.post("Busquedas",$(document.forms[0]).serialize()),function(response){
                 
                 var lienzo  = document.getElementById("lienzo");                
                 var datos = JSON.parse(response); 
                 
-                        console.log(datos.disp);   
+                 console.log(datos.disp);   
                         
                   lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>" ;
                   lienzo.innerHTML += "<p>jugador"+ datos.disp.usuario + "</p>";
