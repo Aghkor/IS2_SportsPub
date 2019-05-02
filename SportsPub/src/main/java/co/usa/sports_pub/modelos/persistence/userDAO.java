@@ -165,6 +165,33 @@ public class userDAO {
 		}
 
 	}
+		
+		public List<Usuario> GetUserByID(Usuario u) {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Usuario> query = (TypedQuery<Usuario>) en.createQuery(
+					"SELECT u.usuario FROM Usuario u WHERE u.idu = :idu", Usuario.class);
+			
+			query.setParameter("idu", u.getIdu());
+			
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
         
        
 

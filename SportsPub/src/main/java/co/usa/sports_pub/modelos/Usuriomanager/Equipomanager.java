@@ -23,34 +23,17 @@ public class Equipomanager {
 	public String setTeam(Equipo e){
 		equipoDAO ed=new equipoDAO();
 		
-		
-		List<Equipo> en=ed.getTeamsByName(e.getNombre());
-		
-		
-		if (en.isEmpty()) {
-		ed.insertObject(e);
-		return "el equipo se ha regitrado correctamente";
+		boolean tr=ed.insertObject(e);
+
+                if (tr) {
+                return "el equipo se ha regitrado correctamente";
 		
 		}else{
-		
-		
 		return "El equipo ya se encuentra registrado";
 		}
 	}
 	
-	public ArrayList<Usuario> getUserOfTeam(Equipo e,Usuario u){
 	
-		
-		equipoDAO ed=new equipoDAO();
-		
-		List<UsuarioEquipo> ue=ed.getUserOfTeam();
-		
-		
-		
-		
-		
-	return null;
-	}
 	
 	
 	
