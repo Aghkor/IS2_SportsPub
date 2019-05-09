@@ -10,6 +10,7 @@ import co.usa.sports_pub.modelos.vo.Encuentro;
 import co.usa.sports_pub.utils.Utils;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -62,22 +63,40 @@ public class publicacionEventos extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		PrintWriter writer = response.getWriter();
-		String encuentroJson = request.getParameter("encuentrodata");
-		Encuentro ec1=(Encuentro) Utils.fromJson(encuentroJson, Encuentro.class);
-                
-                
-                
-                HttpSession misession = request.getSession();
-                
-                
-                misession.setAttribute("evento1", ec1);
-             
-		Eventsmanager em = new Eventsmanager();
-		String msj = em.setEvent(ec1);
-		writer.println(msj);
+            response.setContentType("text/html;charset=UTF-8");
+            Eventsmanager eventos=new Eventsmanager();
+            Encuentro var=new Encuentro();
+            var.setNomev(request.getParameter("nombre_evento"));
+            var.setEmin(request.getParameter("edad_min"));
+            var.setEmax(request.getParameter("edad_max"));
+            var.setGenero(request.getParameter("genero"));
+            var.setNumser(request.getParameter("num_jugadores"));
+            var.setHoraFin(request.getParameter("hora_fin"));
+            var.setHoraIni(request.getParameter("hora_ini"));
+            var.setFechaEvento(request.getParameter("fecha_evento"));
+            var.setNumser(request.getParameter("tipo_futbol"));
+            var.setUbicacion(request.getParameter("ubicacion"));
+            PrintWriter writer = response.getWriter();
+            String msj = eventos.setEvent(var);
+            writer.println(msj);
+        }
+            
+//		PrintWriter writer = response.getWriter();
+//		String encuentroJson = request.getParameter("encuentrodata");
+//		Encuentro ec1=(Encuentro) Utils.fromJson(encuentroJson, Encuentro.class);
+//                
+//                
+//                
+//                HttpSession misession = request.getSession();
+//                
+//                
+//                misession.setAttribute("evento1", ec1);
+//             
+//		Eventsmanager em = new Eventsmanager();
+//		String msj = em.setEvent(ec1);
+//		writer.println(msj);
 
-	}
+	
 
 	/**
 	 * Returns a short description of the servlet.

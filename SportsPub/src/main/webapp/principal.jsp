@@ -64,17 +64,7 @@
 							if (msg == null) {
 								response.sendRedirect("index.jsp");
 							}
-                                                        Eventsmanager u=new Eventsmanager();
-                                                        Encuentro ec1= new Encuentro();
-                                                        Encuentro ec2=u.getEvents(1);
-                                                        Encuentro ec3=u.getEvents(2);    
-                                                        if (ec1 ==null) {
-                                                                ec1=u.getEvents(0);
-                                                            }else{
-                                                                ec1=(Encuentro) session.getAttribute("ec1");
-                                                                
                                                         
-                                                        }
 						%>
 
 						<p class="centered"><a href="perfil.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
@@ -171,13 +161,13 @@
 										<div class="row">
 											<div class="col-md-6">
 												<p class="small mt">INFORMACION </p>
-                                                                                                <p>Nombre:<%= ec1.getNomev() %></p>
-												<p>Ubicacion:<%= ec1.getUbicacion() %></p>
+                                                                                                <p>Nombre:</p>
+												<p>Ubicacion:</p>
 											</div>
 											<div class="col-md-6">
 												<p class="small mt">SE SOLICITA</p>
-												<p>Integrantes:<%= ec1.getNumser() %>    </p>
-												<p>Genero:<%= ec1.getGenero() %></p>
+												<p>Integrantes:    </p>
+												<p>Genero:</p>
 
 											</div>
 
@@ -198,13 +188,13 @@
 										<div class="row">
 											<div class="col-md-6">
 												<p class="small mt">INFORMACION </p>
-												<p>Nombre:<%= ec2.getNomev() %></p>
-												<p>Ubicacion: <%= ec2.getUbicacion() %></p>
+												<p>Nombre:</p>
+												<p>Ubicacion: </p>
 											</div>
 											<div class="col-md-6">
 												<p class="small mt">SE SOLICITA</p>
-												<p>Integrantes:<%= ec2.getNumser() %></p>
-												<p>Genero:<%= ec2.getGenero() %></p>
+												<p>Integrantes:</p>
+												<p>Genero:</p>
 
 											</div>
 

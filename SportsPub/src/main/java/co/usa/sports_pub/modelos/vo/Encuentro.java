@@ -52,17 +52,17 @@ public class Encuentro implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "hora_fin")
+    @Column(name = "horafin")
     private String horaFin;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "hora_ini")
+    @Column(name = "horaini")
     private String horaIni;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 100)
-    @Column(name = "fecha_evento")
+    @Column(name = "fechaeve")
     private String fechaEvento;
     @Basic(optional = false)
     @NotNull
@@ -70,7 +70,7 @@ public class Encuentro implements Serializable {
     @Column(name = "emax")
     private String emax;
     @Column(name = "emin")
-    private Integer emin;
+    private String emin;
     @Size(max = 50)
     @Column(name = "nomev")
     private String nomev;
@@ -78,7 +78,7 @@ public class Encuentro implements Serializable {
     @Column(name = "genero")
     private String genero;
     @Column(name = "numser")
-    private Integer numser;
+    private String numser;
 
 	
 
@@ -98,7 +98,7 @@ public class Encuentro implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 69)
-    @Column(name = "tipo_de_futbol")
+    @Column(name = "tipofutbol")
     private String tipoDeFutbol;
     
 	
@@ -204,11 +204,11 @@ public class Encuentro implements Serializable {
         this.emax = emax;
     }
 
-    public Integer getEmin() {
+    public String getEmin() {
         return emin;
     }
 
-    public void setEmin(Integer emin) {
+    public void setEmin(String emin) {
         this.emin = emin;
     }
 
@@ -228,11 +228,11 @@ public class Encuentro implements Serializable {
         this.genero = genero;
     }
 
-    public Integer getNumser() {
+    public String getNumser() {
         return numser;
     }
 
-    public void setNumser(Integer numser) {
+    public void setNumser(String numser) {
         this.numser = numser;
     }
 
