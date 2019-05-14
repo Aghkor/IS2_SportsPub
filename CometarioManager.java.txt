@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package co.usa.sports_pub.modelos.Usuriomanager;
+
+import co.usa.sports_pub.modelos.persistence.CalificacionDao;
+import co.usa.sports_pub.modelos.persistence.userDAO;
+import co.usa.sports_pub.modelos.vo.Comentario;
+import co.usa.sports_pub.modelos.vo.Usuario;
+import co.usa.sports_pub.utils.Utils;
+import java.util.List;
+
+/**
+ *
+ * @author ivane
+ */
+public class CometarioManager {
+        public String insertComentario(String json) throws ClassNotFoundException {
+
+		CalificacionDao ud = new CalificacionDao();
+		Comentario u = (Comentario) Utils.fromJson(json, Comentario.class);
+		boolean us = ud.insertComentario(u);
+		List<Comentario> um= ud.getComentario(u);
+               return "El comentario ya fue registrado";
+	}
+	public Comentario getComentario(String comentario) {
+		CalificacionDao ud = new CalificacionDao();
+		Comentario u = new Comentario();
+	         u.setComentarios(comentario);
+		List<Comentario> us = ud.getComentario(u);
+         if (us.isEmpty()) {
+			return null;
+		}else{
+		return us.get(0);}
+	}
+}
