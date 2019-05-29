@@ -21,7 +21,7 @@ function init(){
        var txtjug6= document.getElementById("int_6");
        var txtjug7 = document.getElementById("int_7");
        var txtjug8=document.getElementById("int_8");
-       var regequipo= '{"nombreequipo":'+txtnomeq.value + ',"lider_eq":' + txtlidereq.value + ',"tipo_futbol":' + txtTipoF.value +
+       var regequipo= '{"nombre":'+txtnomeq.value + ',"lider_equipo":' + txtlidereq.value + ',"tipo_futbol":' + txtTipoF.value +
                        ',"genero":' + txtGen.txt + ',"num_jugadores":'+ txtNjug.value + '}';
                
        var equipojug= '{"jug1":' +txtjug1.value + ',"jug2":'+ txtjug2.value + ',"jug3":'+ txtjug3.value + ',"jug4":'+ txtjug4.value + ',"jug5":' + txtjug5.value + 
@@ -44,8 +44,7 @@ function init(){
                 var message = request.responseText;
                 if(message ===   "Equipo  correctamente registrado "){
                     alert(message);
-                    document.location.href = 'perfilequipo8.jsp';
-                    
+                    document.location.href = 'perfilequipo8.jsp';                   
                     
                 }else{
                     
