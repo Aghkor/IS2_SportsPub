@@ -118,6 +118,32 @@ public class userDAO {
 		}
 
 	}
+        public List<Usuario> getIDname(String User) {
+		try {
+
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			TypedQuery<Usuario> query = (TypedQuery<Usuario>) en.createQuery(
+					"SELECT u.id FROM Usuario u WHERE u.usuario =:usuario", Usuario.class);
+  
+			query.setParameter("usuario",User);
+			
+			en.getTransaction().commit();
+			return query.getResultList();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}finally{
+		       
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		
+		}
+
+	}
         
         public List<Usuario> disponibles() {
 		try {

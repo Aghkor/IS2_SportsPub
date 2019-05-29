@@ -37,14 +37,12 @@
 				</div>
 				<!--logo start-->
 				<a href="principal.jsp" class="logo"><b>Sports Pub </b></a>
-				<!--logo start-->
-				<a href="principal.jsp" class="logo"><b>SportsPub</b></a>
-				<!--logo end-->
-				<div class="top-menu">
-					<ul class="nav pull-right top-menu">
-						<li><a class="logout" href="index.jsp">Logout</a></li>
-					</ul>
-				</div>
+				<!--logo end-->    
+				<section class="top-menu">
+					<form class="nav pull-right top-nav" method="get" action="Servletlogin">
+						<button class="btn btn-theme btn-block" name="logout" value="1">Salir</button>
+						</from>
+				</section>
 			</header>
 			<!--header end-->
 
@@ -56,7 +54,7 @@
 				<div id="sidebar"  class="nav-collapse ">
 					<!-- sidebar menu start-->
 					<ul class="sidebar-menu" id="nav-accordion">
-						<% Usuario user = (Usuario) session.getAttribute("user");%>
+						<% Usuario user = (Usuario) session.getAttribute("usuario");%>
 
 						<p class="centered"><a href="perfil.jsp"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
 						<h5 class="centered" id="usuario_encabezado"><%= user.getUsuario()%></h5>
@@ -186,11 +184,6 @@
 										</div>
 									</div>
 
-
-
-
-
-
 									<label class="col-sm-2 col-sm-2 control-label">Valorizacion del jugador</label>
 									<div class="valoracion" id="valorizacion" >
 										<input id="radio1" type="radio" name="estrellas" value="5"><!--
@@ -206,9 +199,6 @@
 									</div>
 
 									</br>
-
-
-
 
 									<a class="btn btn-theme  " href="config_perfilusuario.jsp">Configuracion del perfil</a>
 

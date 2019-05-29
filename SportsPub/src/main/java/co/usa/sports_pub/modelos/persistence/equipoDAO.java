@@ -7,6 +7,7 @@ package co.usa.sports_pub.modelos.persistence;
 
 import co.usa.sports_pub.modelos.vo.Equipo;
 import co.usa.sports_pub.modelos.vo.Usuario;
+import co.usa.sports_pub.modelos.vo.UsuarioEquipo;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -64,6 +65,30 @@ public class equipoDAO {
 		}
 
 	}
+        
+        
+     public boolean setTeamUsers(UsuarioEquipo u){
+		try {
+			en = EMF.get().createEntityManager();
+			en.getTransaction().begin();
+			en.persist(u);
+			en.getTransaction().commit();
+			en.refresh(u);
+			en.close();
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			if (en != null && en.isOpen()) {
+				en.close();
+			}
+		}
+     
+     
+     }
+        
+        
 	
 	
 }

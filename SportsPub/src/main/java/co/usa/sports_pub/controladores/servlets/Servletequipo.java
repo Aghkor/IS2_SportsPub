@@ -7,9 +7,11 @@ package co.usa.sports_pub.controladores.servlets;
 
 import co.usa.sports_pub.modelos.Usuriomanager.Equipomanager;
 import co.usa.sports_pub.modelos.vo.Equipo;
+import co.usa.sports_pub.modelos.vo.usuarios_equipo;
 import co.usa.sports_pub.utils.Utils;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -63,11 +65,13 @@ public class Servletequipo extends HttpServlet {
 			throws ServletException, IOException {
 		
 		
-		String jsonEquipo= request.getParameter("Equipo");
+		String jsonEquipo= request.getParameter("Equipodata");
+                String jsonJ=request.getParameter("jData");
 		Equipo equipo=(Equipo) Utils.fromJson(jsonEquipo, Equipo.class);
-		
+                usuarios_equipo jEquipo=(usuarios_equipo) Utils.fromJson(jsonJ, usuarios_equipo.class);
 		Equipomanager em=new Equipomanager();
-		
+                ArrayList<Integer> ide=em.searchUserID(jEquipo);
+                em.registerUserTeam(ide, equipo);
 		String msj=em.setTeam(equipo);
 		
 		PrintWriter writer = response.getWriter();

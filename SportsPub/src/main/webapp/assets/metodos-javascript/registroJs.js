@@ -39,7 +39,7 @@ function init() {
 					     alert(message);
 				    }else{
 					     alert(message);
-					    document.location.href='index.html';
+					    document.location.href='index.jsp';
 				}  
                                  
 								
