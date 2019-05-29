@@ -201,38 +201,38 @@
 						  <div class="form-group ">
                                   <label class="col-sm-2 col-sm-2 control-label" >Integrante 1 </label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="int_1" disabled>
+                                      <input type="text" class="form-control" id="int_1">
                                   </div>
                               </div>
 						    <div class="form-group ">
                                   <label class="col-sm-2 col-sm-2 control-label" >Integrante 2 </label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="int_2" disabled>
+                                      <input type="text" class="form-control" id="int_2" >
                                   </div>
                               </div>
 							    <div class="form-group ">
                                   <label class="col-sm-2 col-sm-2 control-label" >Integrante 3 </label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="int_3" disabled>
+                                      <input type="text" class="form-control" id="int_3" >
                                   </div>
                               </div>
 							    <div class="form-group ">
                                   <label class="col-sm-2 col-sm-2 control-label" >Integrante 4 </label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="int_4" disabled>
+                                      <input type="text" class="form-control" id="int_4" >
                                   </div>
                               </div>
 							    <div class="form-group ">
                                   <label class="col-sm-2 col-sm-2 control-label" >Integrante 5 </label>
                                   <div class="col-lg-10">
-                                      <input type="text" class="form-control" id="int_5" disabled>
+                                      <input type="text" class="form-control" id="int_5" >
                                   </div>
                               </div>
                                  </form>
 							  
 						 
 						  
-                        <a class="btn btn-theme btn-block" href="perfilequipo5.jsp">Creacion del equipo futbol 5</a>
+                        <button class="btn btn-theme"id="cEquip5" href="perfilequipo5.jsp">Creacion del equipo futbol 5</button>
 		            <hr>
                           </div>
                     
@@ -253,7 +253,7 @@
 
           
     <!-- METODOS JAVASCRIPT --->
-    <script type ="text/javascript" src="assents/metodos-javascript/crearEq5.js"></script>        
+    <script type ="text/javascript" src="assents/metodos-javascript/crearEq8.js"></script>        
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
