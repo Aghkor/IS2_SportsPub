@@ -20,8 +20,7 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker.css" />
-    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" />
+   
         
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -46,12 +45,12 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.jsp" class="logo"><b>Sports Pub </b></a>
+            <a href="principal.jsp" class="logo"><b>Sports Pub </b></a>
             <!--logo end-->
             
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="index.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -338,10 +337,12 @@
 	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/date.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 	
+	
 	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
 	
 	
 	<script src="assets/js/form-component.js"></script>    
+	  
         
     <script type="text/javascript" src="assets/metodos-javascript/pEventos.js"></script>  
     
