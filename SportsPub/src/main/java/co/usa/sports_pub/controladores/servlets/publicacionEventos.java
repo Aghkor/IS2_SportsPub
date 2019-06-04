@@ -74,7 +74,7 @@ public class publicacionEventos extends HttpServlet {
             var.setHoraFin(request.getParameter("hora_fin"));
             var.setHoraIni(request.getParameter("hora_ini"));
             var.setFechaEvento(request.getParameter("fecha_evento"));
-            var.setNumser(request.getParameter("tipo_futbol"));
+            var.setTipoDeFutbol(request.getParameter("tipo_futbol"));
             var.setUbicacion(request.getParameter("ubicacion"));
             PrintWriter writer = response.getWriter();
             String msj = eventos.setEvent(var);

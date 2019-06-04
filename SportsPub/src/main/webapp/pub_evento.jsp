@@ -167,21 +167,21 @@
 				 <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Fecha </label>
                               <div class="col-sm-10"> 
-                                 <input id= "fecha_evento"type="date" name="fecha" min="2019-04-25" max="2019-12-31" step="2">   			  
+                                 <input id= "fecha_evento"type="text" name="fecha" min="2019-04-25" max="2019-12-31" step="2">   			  
                               </div>
                           </div>
 						  
 			 <div class="form-group">
                              <div class="col-sm-10"> 
                               <label class="col-sm-2 col-sm-2 control-label">Hora Inicial</label>  
-                              <input id = "hora_ini"type="time" name="hora" min="18:00"  max="21:00" step="3600">
+                              <input id = "hora_ini"type="text" name="hora" min="18:00"  max="21:00" step="3600">
                               </div>
                              <br>
                              <br>
                              <div class="col-sm-10"> 
                               <label class="col-sm-2 col-sm-2 control-label">Hora Final</label> 			  
                                                            
-                               <input id = "hora_fin"type="time" name="hora" min="18:00"  max="21:00" step="3600">	
+                               <input id = "hora_fin"type="text" name="hora" min="18:00"  max="21:00" step="3600">	
                                 </div>
                           </div>
 						  
@@ -192,7 +192,7 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Numero de jugadores</label>
                               <div class="col-sm-10">
-                             <select class="form-control" id="num_jugadores">
+                             <select type="text" class="form-control" id="num_jugadores">
 						  <option value="1">1</option>
 						  <option value="2">2</option>
 						  <option value="3">3</option>
@@ -204,7 +204,7 @@
 						  <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Genero</label>
                               <div class="col-sm-10">
-                                  <select class="form-control" id="genero">
+                                  <select type="text" class="form-control" id="genero">
                                       
 						  <option value="mas">Masculino</option>
 						  <option value="fem">Femenino</option>
@@ -216,7 +216,7 @@
                              <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Edad maxima</label>
                               <div class="col-sm-10">
-				  <select class="form-control" id="edad_max" >
+				  <select type="text" class="form-control" id="edad_max" >
 						  <option value="17">17</option>
 						  <option value="18">18</option>
 						  <option value="19">19</option>
@@ -281,7 +281,7 @@
                           </div>
                                                 
 						  
-						 <a  id="pEvent" class="btn btn-theme" >Publicar evento</a>
+						 <a  id="pEventos" class="btn btn-theme" >Publicar evento</a>
 		          
 				  <hr>
                           </div>

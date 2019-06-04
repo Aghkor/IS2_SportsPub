@@ -73,16 +73,20 @@ public class Bequipos extends HttpServlet {
         }
                 try {
 
-            
-           Usermanager lista=new Usermanager();
+            String action = request.getParameter("action");
+            switch (action) {
+                case "listarDisponibles":
+                    Usermanager lista=new Usermanager();
                 List<Equipo> equipos = lista.equiposDisponibles();
-                
-          try (PrintWriter out = response.getWriter()) {
-              
+                 try (PrintWriter out = response.getWriter()) {
                     Gson gson = new Gson();
                     out.println(gson.toJson(equipos));
                     return;
                 }
+            }
+           
+                
+         
 
             
             
